@@ -1,6 +1,6 @@
 <script type="text/html" id="tmpl-autocomplete-header">
 	<div class="autocomplete-header">
-		<div class="autocomplete-header-title">{{{ data.label }}}</div>
+		<div class="autocomplete-header-title">Treff på {{{ data.label }}} ({{{ data.hits }}})</div>
 		<div class="clear"></div>
 	</div>
 </script>
@@ -14,9 +14,11 @@
 			<span class="suggestion-post-title">{{{ data._highlightResult.post_title.value }}}</span>
 
 			<#
+			console.log(data);
 			var attributes = ['content', 'title6', 'title5', 'title4', 'title3', 'title2', 'title1'];
 			var attribute_name;
 			var relevant_content = '';
+			var price_content = '';
 			for ( var index in attributes ) {
 			attribute_name = attributes[ index ];
 			if ( data._highlightResult[ attribute_name ].matchedWords.length > 0 ) {
@@ -26,8 +28,12 @@
 			relevant_content = data._snippetResult[ attribute_name ].value;
 			}
 			}
+			if(data.post_type == "product") {
+				price_content = '<span class="suggestion-post-price">* Pris:' + data.price2 + '</span>';
+			}
 			#>
 			<span class="suggestion-post-content">{{{ relevant_content }}}</span>
+			{{{ price_content }}}
 		</div>
 	</a>
 </script>
@@ -72,6 +78,8 @@
 		/* init Algolia client */
 		var client = algoliasearch(algolia.application_id, algolia.search_api_key);
 
+
+
 		/* setup default sources */
 		var sources = [];
 		jQuery.each(algolia.autocomplete.sources, function(i, config) {
@@ -113,7 +121,7 @@
 			/* Todo: Add empty template when we fixed https://github.com/algolia/autocomplete.js/issues/109 */
 
 			if(algolia.powered_by_enabled) {
-				config.templates.footer = wp.template('autocomplete-footer');
+				//config.templates.footer = wp.template('autocomplete-footer');
 			}
 
 			/* Instantiate autocomplete.js */
@@ -130,6 +138,7 @@
 
 			/* Configure tether */
 			var $menu = $autocomplete.find('.aa-dropdown-menu');
+
 			var config = {
 				element: $menu,
 				target: this,
@@ -157,10 +166,10 @@
 				}
 			});
 			$searchInput.on('autocomplete:updated', function() {
-				tether.position();
+				//tether.position();
 			});
 			$searchInput.on('autocomplete:opened', function() {
-				updateDropdownWidth();
+				//updateDropdownWidth();
 			});
 
 
@@ -188,5 +197,18 @@
 			e.preventDefault();
 			window.location = "https://www.algolia.com/?utm_source=WordPress&utm_medium=extension&utm_content=" + window.location.hostname + "&utm_campaign=poweredby";
 		});
+
+		/* Find top position of element next after header. */
+		var p = jQuery( ".header:first" );
+		var position = p.nextAll("div").position();
+		jQuery(".aa-dropdown-menu").css("top",position.top);
+		console.log("bottom: " + position.top + p.nextAll("div").attr("class"));
+		console.log("bottom: " + position.top + p.nextAll("div").attr("class"));
+		jQuery( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
+
+		jQuery("[class^=aa-dataset-]").not(":first").wrapAll('<div class="r-wrapper"></div>');
+
+		/* Make dropdown-menu an overlay */
+		jQuery( ".aa-dropdown-menu" ).wrapInner( "<div class='aa-dropdown-menu-inner'></div>" );
 	});
 </script>

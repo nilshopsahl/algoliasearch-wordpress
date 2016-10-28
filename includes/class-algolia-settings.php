@@ -11,6 +11,7 @@ class Algolia_Settings
 		add_option( 'algolia_application_id', '' );
 		add_option( 'algolia_search_api_key', '' );
 		add_option( 'algolia_api_key', '' );
+		add_option( 'algolia_top_height', '' );
 		add_option( 'algolia_synced_indices_ids', array() );
 		add_option( 'algolia_autocomplete_enabled', 'no' );
 		add_option( 'algolia_autocomplete_config', array() );
@@ -41,6 +42,15 @@ class Algolia_Settings
 	public function get_api_key() {
 		return get_option( 'algolia_api_key', '' );
 	}
+
+
+	/**
+	 * @return string
+	 */
+	public function get_top_height() {
+		return get_option( 'algolia_top_height', '' );
+	}
+
 
 	/**
 	 * @return array

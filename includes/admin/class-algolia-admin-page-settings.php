@@ -108,6 +108,14 @@ class Algolia_Admin_Page_Settings
 			$this->section
 		);
 
+		add_settings_field(
+			'algolia_top_height',"Top height",
+			array( $this, 'api_top_height_callback' ),
+			$this->slug,
+			$this->section
+		);
+
+
 		/*add_settings_field(
 			'algolia_powered_by_enabled',
 			__( 'Remove Algolia powered by logo', 'algolia' ),
@@ -119,6 +127,9 @@ class Algolia_Admin_Page_Settings
 		register_setting( $this->option_group, 'algolia_application_id', array( $this, 'sanitize_application_id' ) );
 		register_setting( $this->option_group, 'algolia_search_api_key', array( $this, 'sanitize_search_api_key' ) );
 		register_setting( $this->option_group, 'algolia_api_key', array( $this, 'sanitize_api_key' ) );
+
+		register_setting( $this->option_group, 'algolia_top_height', array( $this, '' ) );
+
 		// register_setting( $this->option_group, 'algolia_powered_by_enabled', array( $this, 'sanitize_powered_by_enabled' ) );
 	}
 
@@ -132,6 +143,12 @@ class Algolia_Admin_Page_Settings
 		$setting = esc_attr( $this->plugin->get_settings()->get_search_api_key() );
 		echo "<input type='text' name='algolia_search_api_key' class='regular-text' value='$setting' />" .
 			'<p class="description" id="home-description">' . __( 'Your Algolia Search-only API key (public).', 'algolia' ) . '</p>';
+	}
+
+	public function api_top_height_callback() {
+		$setting = esc_attr( $this->plugin->get_settings()->get_top_height() );
+		echo "<input type='text' name='algolia_top_height' class='regular-text' value='$setting' />" .
+			'<p class="description" id="home-description">Pixels between top and result container</p>';
 	}
 
 	public function api_key_callback() {

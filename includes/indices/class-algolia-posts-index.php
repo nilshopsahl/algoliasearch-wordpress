@@ -144,6 +144,10 @@ final class Algolia_Posts_Index extends Algolia_Index
 		$shared_attributes['comment_count'] = (int) $post->comment_count;
 		$shared_attributes['menu_order'] = (int) $post->menu_order;
 
+		$_product = wc_get_product( $post->ID );
+		$shared_attributes['price2'] = wc_price($_product->get_price()); //$post->menu_order;
+
+
 		$author = get_userdata( $post->post_author );
 		if ( $author ) {
 			$shared_attributes['post_author'] = array(
@@ -207,6 +211,7 @@ final class Algolia_Posts_Index extends Algolia_Index
 				'unordered(title4)',
 				'unordered(title5)',
 				'unordered(title6)',
+				'unordered(price)',
 				'unordered(taxonomies)',
 				'unordered(content)',
 			),
@@ -229,6 +234,7 @@ final class Algolia_Posts_Index extends Algolia_Index
 				'title4:30',
 				'title5:30',
 				'title6:30',
+				'price:30',
 				'content:30',
 			),
 			'snippetEllipsisText' => '…',
