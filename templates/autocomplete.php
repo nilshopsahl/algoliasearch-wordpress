@@ -202,11 +202,11 @@
 		var p = jQuery( ".header:first" );
 		var position = p.nextAll("div").position();
 		jQuery(".aa-dropdown-menu").css("top",position.top);
-		console.log("bottom: " + position.top + p.nextAll("div").attr("class"));
-		console.log("bottom: " + position.top + p.nextAll("div").attr("class"));
-		jQuery( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
-
-		jQuery("[class^=aa-dataset-]").not(":first").wrapAll('<div class="r-wrapper"></div>');
+ 		//console.log("bottom: " + position.top + p.nextAll("div").attr("class"));
+		//jQuery( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
+		jQuery(".aa-dropdown-menu").each(function() {
+			jQuery(this).find("div").not(":first").wrapAll('<div class="r-wrapper"></div>');
+			});
 
 		/* Make dropdown-menu an overlay */
 		jQuery( ".aa-dropdown-menu" ).wrapInner( "<div class='aa-dropdown-menu-inner'></div>" );
