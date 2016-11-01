@@ -67,8 +67,7 @@
   /* hit item */
   border-bottom: 1px solid gainsboro; }
 
-.ais-hits--item:first-of-type,
-.aa-suggestion:first-of-type {
+.ais-hits--item:first-of-type {
   border-top: 1px solid gainsboro; }
 
 .ais-hits--item h2 {

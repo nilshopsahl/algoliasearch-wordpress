@@ -11,9 +11,7 @@
     color: black; }
 
 div[class^="aa-dataset-"] {
-  float: left;
-  min-width: 400px;
-  max-width: 100%; }
+  width: 100%; }
 
 .r-wrapper {
   float: right;
@@ -65,7 +63,10 @@ div[class^="aa-dataset-"] {
   .aa-dropdown-menu {
     min-width: inherit;
     max-width: inherit;
-    width: 70%; } }
+    width: 70%; }
+  .r-wrapper {
+    float: none;
+    width: 100%; } }
 
 .aa-dropdown-menu .aa-input, .aa-dropdown-menu .aa-hint {
   width: 100%; }
@@ -109,7 +110,11 @@ div[class^="aa-dataset-"] {
 
 /* Suggestion */
 .aa-dropdown-menu .aa-suggestion {
-  padding: 5px 0; }
+  padding: 1rem;
+  border-bottom: 1px solid gainsboro; }
+
+.aa-dropdown-menu .aa-suggestion:first-of-type {
+  border-top: 1px solid gainsboro; }
 
 .aa-dropdown-menu .aa-suggestion:after {
   visibility: hidden;
@@ -165,7 +170,8 @@ div[class^="aa-dataset-"] {
   margin-bottom: 5px;
   border-radius: 3px;
   width: 80px;
-  height: 80px; }
+  height: 80px;
+  border: 1px solid gainsboro; }
 
 .aa-dropdown-menu .suggestion-user-thumbnail {
   float: left;
