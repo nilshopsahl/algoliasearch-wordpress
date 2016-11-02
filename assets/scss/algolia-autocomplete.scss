@@ -19,10 +19,7 @@ div[class^="aa-dataset-"] {
     width: 100%;
 }
 
-.r-wrapper {
-    float:right;
-    width:50%;
-}
+
 
 .aa-dropdown-menu {
     /*
@@ -63,19 +60,6 @@ div[class^="aa-dataset-"] {
         position: relative !important;
         background-color: #fff;
 
-}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .aa-dropdown-menu {
-        min-width: inherit;
-        max-width: inherit;
-        width: 70%;
-    }
-    .r-wrapper {
-        float:none;
-        width:100%;
-    }
 }
 
 .aa-dropdown-menu .aa-input, .aa-dropdown-menu .aa-hint {
@@ -244,4 +228,41 @@ div[class^="aa-dataset-"] {
 
 .autocomplete-empty .empty-query {
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1029px) {
+    /* For mobile phones and tablets only */
+    .aa-dropdown-menu {
+        min-width: inherit;
+        max-width: inherit;
+        width: 70%;
+    }
+    .r-wrapper {
+        float:none;
+        width:100%;
+    }
+}
+
+
+@media only screen and (min-width: 1030px) {
+    /* For desktop */
+    .aa-suggestions {
+        width: 50%;
+        float: left;
+    }
+    .r-wrapper {
+        float:left;
+        width: 50%;
+        //TODO this might have to be removed
+        .aa-suggestions {
+            width: 100%;
+        }
+    }
+    .aa-dropdown-menu {
+        margin: 0;
+    }
+    .autocomplete-header {
+        margin: 0;
+        width: 50%;
+    }
 }

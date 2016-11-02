@@ -77,11 +77,10 @@
 
 //item box
 .ais-hits--item {
-    /* hit item */
     border-bottom:1px solid gainsboro;
 }
 
-//the item box on top
+//the first item box
 .ais-hits--item:first-of-type {
     border-top:1px solid gainsboro;
 }
