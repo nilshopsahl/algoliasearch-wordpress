@@ -111,16 +111,16 @@ div[class^="aa-dataset-"] {
   height: 0; }
 
 .aa-dropdown-menu .aa-suggestion em {
-  color: #174d8c;
-  background: rgba(143, 187, 237, 0.1);
-  font-style: normal; }
+  font-style: normal;
+  background-color: #fee2b6; }
 
 .aa-dropdown-menu .aa-suggestion .suggestion-post-title {
   font-weight: bold;
   display: block;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 0rem; }
 
 .aa-dropdown-menu .aa-suggestion .suggestion-post-content {
   color: #63676d;
@@ -200,6 +200,36 @@ div[class^="aa-dataset-"] {
     float: none;
     width: 100%; } }
 
+body .thinner {
+  font-weight: lighter; }
+
+.suggestion-product-title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #333333; }
+
+.suggestion-post-price {
+  font-weight: bold;
+  color: #333333; }
+
+.wrapper-suggestion-link {
+  background-color: #cccccc;
+  padding: 0.5rem;
+  border-radius: 1.25rem;
+  margin: 0.25rem;
+  display: inline-block; }
+
+.suggestion-post-content {
+  margin-bottom: 0; }
+
+.aa-suggestion .suggestion-tag-title {
+  margin-bottom: 0;
+  text-transform: capitalize; }
+  .aa-suggestion .suggestion-tag-title em {
+    font-weight: lighter;
+    background-color: transparent;
+    color: #333333; }
+
 @media only screen and (min-width: 1030px) {
   /* For desktop */
   .aa-suggestions {
@@ -215,6 +245,3 @@ div[class^="aa-dataset-"] {
   .autocomplete-header {
     margin: 0;
     width: 50%; } }
-
-body .thinner {
-  font-weight: lighter; }

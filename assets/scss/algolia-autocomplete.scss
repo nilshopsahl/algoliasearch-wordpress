@@ -134,9 +134,10 @@ div[class^="aa-dataset-"] {
 }
 
 .aa-dropdown-menu .aa-suggestion em {
-    color: #174d8c;
-    background: rgba(143,187,237,.1);
+    //color: #174d8c;
+    //background: rgba(143,187,237,.1);
     font-style: normal;
+    background-color: #fee2b6;
 }
 
 .aa-dropdown-menu .aa-suggestion .suggestion-post-title {
@@ -145,6 +146,7 @@ div[class^="aa-dataset-"] {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin: 0rem;
 }
 
 .aa-dropdown-menu .aa-suggestion .suggestion-post-content {
@@ -243,6 +245,46 @@ div[class^="aa-dataset-"] {
     }
 }
 
+body .thinner {
+    font-weight: lighter;
+}
+
+.suggestion-product-title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #333333;
+}
+
+.suggestion-post-price {
+    font-weight: bold;
+    color: #333333;
+}
+
+// wraps each recipe tag
+.wrapper-suggestion-link {
+    background-color: #cccccc;
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    margin: 0.25rem;
+    display: inline-block;
+}
+
+.suggestion-post-content {
+    margin-bottom: 0;
+}
+
+//Tag suggestions
+.aa-suggestion .suggestion-tag-title {
+    margin-bottom: 0;
+    text-transform: capitalize;
+    em {
+        font-weight: lighter;
+        background-color: transparent;
+        color: #333333;
+    }
+}
+
+
 
 @media only screen and (min-width: 1030px) {
     /* For desktop */
@@ -267,10 +309,3 @@ div[class^="aa-dataset-"] {
     }
 }
 
-body .thinner {
-    font-weight: lighter;
-}
-
-.suggestion-product-title {
-
-}
