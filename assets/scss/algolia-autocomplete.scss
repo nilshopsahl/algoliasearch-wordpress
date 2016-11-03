@@ -97,6 +97,7 @@ div[class^="aa-dataset-"] {
 
 .aa-dropdown-menu .autocomplete-header-title {
     float: left;
+    clear: left;
 }
 
 .aa-dropdown-menu .autocomplete-header-more {
@@ -262,7 +263,7 @@ body .thinner {
 
 // wraps each recipe tag
 .wrapper-suggestion-link {
-    background-color: #cccccc;
+    background-color: #eaeaea;
     padding: 0.5rem;
     border-radius: 1.25rem;
     margin: 0.25rem;
@@ -284,6 +285,13 @@ body .thinner {
     }
 }
 
+.wrapper-autocomplete-post-suggestion {
+    background-color: #eaeaea;
+}
+
+.r-wrapper .aa-dataset-4 {
+    background-color: #eaeaea;
+}
 
 
 @media only screen and (min-width: 1030px) {

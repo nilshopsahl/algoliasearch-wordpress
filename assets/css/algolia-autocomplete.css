@@ -82,7 +82,8 @@ div[class^="aa-dataset-"] {
   font-weight: bold; }
 
 .aa-dropdown-menu .autocomplete-header-title {
-  float: left; }
+  float: left;
+  clear: left; }
 
 .aa-dropdown-menu .autocomplete-header-more {
   float: right; }
@@ -213,7 +214,7 @@ body .thinner {
   color: #333333; }
 
 .wrapper-suggestion-link {
-  background-color: #cccccc;
+  background-color: #eaeaea;
   padding: 0.5rem;
   border-radius: 1.25rem;
   margin: 0.25rem;
@@ -229,6 +230,12 @@ body .thinner {
     font-weight: lighter;
     background-color: transparent;
     color: #333333; }
+
+.wrapper-autocomplete-post-suggestion {
+  background-color: #eaeaea; }
+
+.r-wrapper .aa-dataset-4 {
+  background-color: #eaeaea; }
 
 @media only screen and (min-width: 1030px) {
   /* For desktop */
