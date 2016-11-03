@@ -1,6 +1,6 @@
 <script type="text/html" id="tmpl-autocomplete-header">
 	<div class="autocomplete-header">
-		<div class="autocomplete-header-title">Treff på {{{ data.label }}} ({{{ data.hits }}})</div>
+		<div class="autocomplete-header-title">Treff på {{{ data.label }}} <span class="thinner">({{{ data.hits }}})<span></div>
 		<div class="clear"></div>
 	</div>
 </script>
@@ -11,7 +11,7 @@
 		<img class="suggestion-post-thumbnail" src="{{ data.images.thumbnail.url }}" alt="{{ data.post_title }}">
 		<# } #>
 		<div class="suggestion-post-attributes">
-			<span class="suggestion-post-title">{{{ data._highlightResult.post_title.value }}}</span>
+			<span class="suggestion-post-title suggestion-product-title">{{{ data._highlightResult.post_title.value }}}</span>
 
 			<#
 			console.log(data);
