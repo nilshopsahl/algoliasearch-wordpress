@@ -12,6 +12,24 @@ so these variables help show which class is what thing */
   width: 100%; }
   .aa-dataset-3 .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestion:first-of-type {
     border-top: 1px solid gainsboro; }
+  @media only screen and (min-width: 1030px) {
+    .aa-dataset-3, .aa-dataset-0 {
+      width: 50%;
+      float: left;
+      padding: 0.5rem; }
+      .aa-dataset-3 .aa-suggestions, .aa-dataset-0 .aa-suggestions {
+        border: 1px #ccc solid;
+        border-radius: 0.5rem; }
+      .aa-dataset-3 .aa-suggestion:hover, .aa-dataset-0 .aa-suggestion:hover {
+        background-color: #f8f8f8; }
+      .aa-dataset-3 .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestion:first-of-type {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-top: none; }
+      .aa-dataset-3 .aa-suggestion:last-of-type, .aa-dataset-0 .aa-suggestion:last-of-type {
+        border-bottom: none;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem; } }
 
 .aa-dataset-4, .aa-dataset-1 {
   width: 100%; }
@@ -19,6 +37,8 @@ so these variables help show which class is what thing */
     background-color: #f8f8f8;
     border: 1px #ccc solid;
     border-radius: 0.5rem; }
+    .aa-dataset-4 .aa-suggestions .aa-suggestion:hover, .aa-dataset-1 .aa-suggestions .aa-suggestion:hover {
+      background-color: #fff; }
   .aa-dataset-4 .aa-suggestion:first-of-type, .aa-dataset-1 .aa-suggestion:first-of-type {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem; }
@@ -26,6 +46,11 @@ so these variables help show which class is what thing */
     border-bottom: none;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem; }
+  @media only screen and (min-width: 1030px) {
+    .aa-dataset-4, .aa-dataset-1 {
+      width: 100%;
+      float: left;
+      padding: 0.5rem; } }
 
 .aa-dataset-5, .aa-dataset-2 {
   width: 100%; }
@@ -37,7 +62,13 @@ so these variables help show which class is what thing */
     background-color: transparent; }
   .aa-dataset-5 .aa-suggestions .aa-suggestion, .aa-dataset-2 .aa-suggestions .aa-suggestion {
     display: inline-block;
-    border: none; }
+    border: none;
+    padding: 0; }
+  @media only screen and (min-width: 1030px) {
+    .aa-dataset-5, .aa-dataset-2 {
+      width: 100%;
+      float: left;
+      padding: 0.5rem; } }
 
 .aa-dropdown-menu {
   /* we set the width in JS */
@@ -50,9 +81,6 @@ so these variables help show which class is what thing */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.35); }
   .aa-dropdown-menu .test {
     color: black; }
-
-div[class^="aa-dataset-"] {
-  width: 100%; }
 
 .aa-dropdown-menu {
   /*
@@ -79,14 +107,6 @@ div[class^="aa-dataset-"] {
   transform: translate(0) !important; }
 
 .aa-dropdown-menu-inner {
-  /*
-  width: 80% !important;
-  height:50% !important;
-  left: 10% !important;
-  top: 25% !important;
-  position: fixed !important;
-  overflow-y: scroll;
-      */
   width: 100%;
   max-width: 1470px;
   margin-left: auto;
@@ -227,16 +247,6 @@ div[class^="aa-dataset-"] {
 .autocomplete-empty .empty-query {
   font-weight: bold; }
 
-@media only screen and (max-width: 1029px) {
-  /* For mobile phones and tablets only */
-  .aa-dropdown-menu {
-    min-width: inherit;
-    max-width: inherit;
-    width: 70%; }
-
-  .r-wrapper {
-    float: none;
-    margin: 1rem; } }
 body .thinner {
   font-weight: lighter; }
 
@@ -272,23 +282,30 @@ body .thinner {
 .wrapper-autocomplete-post-suggestion {
   background-color: #eaeaea; }
 
+@media only screen and (max-width: 1029px) {
+  /* For mobile phones and tablets only */
+  .aa-dropdown-menu {
+    min-width: inherit;
+    max-width: inherit;
+    width: 70%; }
+
+  .r-wrapper {
+    float: none;
+    margin: 1rem; } }
+/* Media query for desktop */
 @media only screen and (min-width: 1030px) {
-  /* For desktop */
   .aa-suggestions {
-    width: 50%;
+    width: 100%;
     float: left; }
 
   .r-wrapper {
     float: left;
     width: 50%; }
-    .r-wrapper .aa-suggestions {
-      width: 100%; }
 
-  .aa-dropdown-menu {
-    margin: 0; }
+  .aa-dropdown-menu .autocomplete-header {
+    margin: 0.75rem 0; }
 
-  .autocomplete-header {
-    margin: 0;
-    width: 50%; } }
+  .wrapper-suggestion-link {
+    margin: 0 0.5rem 0 0; } }
 
 /*# sourceMappingURL=algolia-autocomplete.css.map */

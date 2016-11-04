@@ -17,6 +17,30 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
     .aa-suggestion:first-of-type {
         border-top:1px solid gainsboro;
     }
+    // Media query for desktop
+    @media only screen and (min-width: 1030px) {
+        width: 50%;
+        float: left;
+        padding: 0.5rem;
+        .aa-suggestions {
+            border: 1px #ccc solid;
+            border-radius: 0.5rem;
+        }
+        .aa-suggestion:hover {
+            background-color: #f8f8f8;
+        }
+        .aa-suggestion:first-of-type {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            border-top: none;
+        }
+        .aa-suggestion:last-of-type {
+            border-bottom: none;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+    }
+
 }
 
 #{$posts} {
@@ -25,6 +49,9 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
         background-color: #f8f8f8;
         border: 1px #ccc solid;
         border-radius: 0.5rem;
+        .aa-suggestion:hover {
+            background-color: #fff;
+        }
     }
     .aa-suggestion:first-of-type {
         border-top-left-radius: 0.5rem;
@@ -34,6 +61,12 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
         border-bottom: none;
         border-bottom-left-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
+    }
+    // Media query for desktop
+    @media only screen and (min-width: 1030px) {
+        width: 100%;
+        float: left;
+        padding: 0.5rem;
     }
 }
 
@@ -50,6 +83,13 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
     .aa-suggestions .aa-suggestion {
         display: inline-block;
         border: none;
+        padding: 0;
+    }
+    // Media query for desktop
+    @media only screen and (min-width: 1030px) {
+        width: 100%;
+        float: left;
+        padding: 0.5rem;
     }
 }
 
@@ -65,10 +105,6 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
     .test {
         color: black;
     }
-}
-
-div[class^="aa-dataset-"] {
-    width: 100%;
 }
 
 .aa-dropdown-menu {
@@ -94,21 +130,13 @@ div[class^="aa-dataset-"] {
 }
 
 .aa-dropdown-menu-inner{
-    /*
-    width: 80% !important;
-    height:50% !important;
-    left: 10% !important;
-    top: 25% !important;
-    position: fixed !important;
-    overflow-y: scroll;
-        */
-       width: 100%;
-       max-width: 1470px;
+    width: 100%;
+    max-width: 1470px;
     margin-left: auto;
     margin-right: auto;
-        border:0px !important;
-        position: relative !important;
-        background-color: #fff;
+    border:0px !important;
+    position: relative !important;
+    background-color: #fff;
 
 }
 
@@ -274,20 +302,6 @@ div[class^="aa-dataset-"] {
     font-weight: bold;
 }
 
-@media only screen and (max-width: 1029px) {
-    /* For mobile phones and tablets only */
-    .aa-dropdown-menu {
-        min-width: inherit;
-        max-width: inherit;
-        width: 70%;
-    }
-    .r-wrapper {
-        float:none;
-        //width:100%;
-        margin: 1rem;
-    }
-}
-
 body .thinner {
     font-weight: lighter;
 }
@@ -303,7 +317,7 @@ body .thinner {
     color: #333333;
 }
 
-// wraps each recipe tag
+// wraps each tag
 .wrapper-suggestion-link {
     background-color: #eaeaea;
     padding: 0.5rem;
@@ -334,26 +348,35 @@ body .thinner {
     background-color: #eaeaea;
 }
 
+@media only screen and (max-width: 1029px) {
+    /* For mobile phones and tablets only */
+    .aa-dropdown-menu {
+        min-width: inherit;
+        max-width: inherit;
+        width: 70%;
+    }
+    .r-wrapper {
+        float:none;
+        margin: 1rem;
+    }
+}
+
+/* Media query for desktop */
 @media only screen and (min-width: 1030px) {
-    /* For desktop */
     .aa-suggestions {
-        width: 50%;
+        width: 100%;
         float: left;
     }
+    // this wrapper contains posts and tags
     .r-wrapper {
         float:left;
         width: 50%;
-        //TODO this might have to be removed
-        .aa-suggestions {
-            width: 100%;
-        }
     }
-    .aa-dropdown-menu {
-        margin: 0;
+    .aa-dropdown-menu .autocomplete-header {
+        margin: 0.75rem 0;
     }
-    .autocomplete-header {
-        margin: 0;
-        width: 50%;
+    .wrapper-suggestion-link {
+        margin: 0 0.5rem 0 0;
     }
 }
 
