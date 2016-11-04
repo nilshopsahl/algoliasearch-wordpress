@@ -1,3 +1,44 @@
+/* This plugin uses 'dataset' as the class for everything
+so these variables help show which class is what thing */
+.aa-dataset-3, .aa-dataset-0, .aa-dataset-4, .aa-dataset-1, .aa-dataset-5, .aa-dataset-2 {
+  *zoom: 1; }
+  .aa-dataset-3:before, .aa-dataset-3:after, .aa-dataset-0:before, .aa-dataset-0:after, .aa-dataset-4:before, .aa-dataset-4:after, .aa-dataset-1:before, .aa-dataset-1:after, .aa-dataset-5:before, .aa-dataset-5:after, .aa-dataset-2:before, .aa-dataset-2:after {
+    content: " ";
+    display: table; }
+  .aa-dataset-3:after, .aa-dataset-0:after, .aa-dataset-4:after, .aa-dataset-1:after, .aa-dataset-5:after, .aa-dataset-2:after {
+    clear: both; }
+
+.aa-dataset-3, .aa-dataset-0 {
+  width: 100%; }
+  .aa-dataset-3 .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestion:first-of-type {
+    border-top: 1px solid gainsboro; }
+
+.aa-dataset-4, .aa-dataset-1 {
+  width: 100%; }
+  .aa-dataset-4 .aa-suggestions, .aa-dataset-1 .aa-suggestions {
+    background-color: #f8f8f8;
+    border: 1px #ccc solid;
+    border-radius: 0.5rem; }
+  .aa-dataset-4 .aa-suggestion:first-of-type, .aa-dataset-1 .aa-suggestion:first-of-type {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; }
+  .aa-dataset-4 .aa-suggestion:last-of-type, .aa-dataset-1 .aa-suggestion:last-of-type {
+    border-bottom: none;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem; }
+
+.aa-dataset-5, .aa-dataset-2 {
+  width: 100%; }
+  .aa-dataset-5 .aa-suggestion:first-of-type,
+  .aa-dataset-5 .aa-suggestion, .aa-dataset-2 .aa-suggestion:first-of-type,
+  .aa-dataset-2 .aa-suggestion {
+    border: 0px; }
+  .aa-dataset-5 .aa-suggestion.aa-cursor, .aa-dataset-2 .aa-suggestion.aa-cursor {
+    background-color: transparent; }
+  .aa-dataset-5 .aa-suggestions .aa-suggestion, .aa-dataset-2 .aa-suggestions .aa-suggestion {
+    display: inline-block;
+    border: none; }
+
 .aa-dropdown-menu {
   /* we set the width in JS */
   font-family: sans-serif;
@@ -15,16 +56,16 @@ div[class^="aa-dataset-"] {
 
 .aa-dropdown-menu {
   /*
-    color: #1a1a1a;
-    font-size: 12px;
-    position: fixed !important;
-    top: 0 !important;
-    left:0 !important;
-    bottom:0 !important;
-    right: 0 !important;
-    background-color: #000;
-    width:100%  !important;
-    */
+  color: #1a1a1a;
+  font-size: 12px;
+  position: fixed !important;
+  top: 0 !important;
+  left:0 !important;
+  bottom:0 !important;
+  right: 0 !important;
+  background-color: #000;
+  width:100%  !important;
+  */
   height: 100% !important;
   width: 100% !important;
   position: absolute !important;
@@ -39,13 +80,13 @@ div[class^="aa-dataset-"] {
 
 .aa-dropdown-menu-inner {
   /*
-    width: 80% !important;
-    height:50% !important;
-    left: 10% !important;
-    top: 25% !important;
-    position: fixed !important;
-    overflow-y: scroll;
-        */
+  width: 80% !important;
+  height:50% !important;
+  left: 10% !important;
+  top: 25% !important;
+  position: fixed !important;
+  overflow-y: scroll;
+      */
   width: 100%;
   max-width: 1470px;
   margin-left: auto;
@@ -73,8 +114,7 @@ div[class^="aa-dataset-"] {
 /* Header */
 .aa-dropdown-menu .autocomplete-header {
   margin: 0 14px;
-  line-height: 3em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  line-height: 3em; }
 
 .aa-dropdown-menu .autocomplete-header-title,
 .aa-dropdown-menu .autocomplete-header-more {
@@ -100,9 +140,6 @@ div[class^="aa-dataset-"] {
   padding: 1rem;
   border-bottom: 1px solid gainsboro; }
 
-.aa-dropdown-menu .aa-suggestion:first-of-type {
-  border-top: 1px solid gainsboro; }
-
 .aa-dropdown-menu .aa-suggestion:after {
   visibility: hidden;
   display: block;
@@ -116,7 +153,6 @@ div[class^="aa-dataset-"] {
   background-color: #fee2b6; }
 
 .aa-dropdown-menu .aa-suggestion .suggestion-post-title {
-  font-weight: bold;
   display: block;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -133,10 +169,10 @@ div[class^="aa-dataset-"] {
 .aa-dropdown-menu .aa-suggestion .suggestion-post-content em {
   padding: 0 0 1px;
   background: inherit;
-  box-shadow: inset 0 -2px 0 0 rgba(69, 142, 225, 0.8);
-  color: inherit; }
+  color: inherit;
+  background-color: #fee2b6; }
 
-.aa-dropdown-menu .aa-suggestion.aa-cursor {
+.aa-suggestion.aa-cursor {
   background-color: #f9f9f9; }
 
 .aa-dropdown-menu a.suggestion-link {
@@ -197,10 +233,10 @@ div[class^="aa-dataset-"] {
     min-width: inherit;
     max-width: inherit;
     width: 70%; }
+
   .r-wrapper {
     float: none;
-    width: 100%; } }
-
+    margin: 1rem; } }
 body .thinner {
   font-weight: lighter; }
 
@@ -219,6 +255,8 @@ body .thinner {
   border-radius: 1.25rem;
   margin: 0.25rem;
   display: inline-block; }
+  .wrapper-suggestion-link:hover {
+    background-color: #ccc; }
 
 .suggestion-post-content {
   margin-bottom: 0; }
@@ -234,21 +272,23 @@ body .thinner {
 .wrapper-autocomplete-post-suggestion {
   background-color: #eaeaea; }
 
-.r-wrapper .aa-dataset-4 {
-  background-color: #eaeaea; }
-
 @media only screen and (min-width: 1030px) {
   /* For desktop */
   .aa-suggestions {
     width: 50%;
     float: left; }
+
   .r-wrapper {
     float: left;
     width: 50%; }
     .r-wrapper .aa-suggestions {
       width: 100%; }
+
   .aa-dropdown-menu {
     margin: 0; }
+
   .autocomplete-header {
     margin: 0;
     width: 50%; } }
+
+/*# sourceMappingURL=algolia-autocomplete.css.map */
