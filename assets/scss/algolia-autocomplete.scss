@@ -40,7 +40,13 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
             border-bottom-right-radius: 0.5rem;
         }
     }
-
+    .autocomplete-header {
+        margin-left: 1rem;
+    }
+    .suggestion-link {
+        display: block;
+        padding: 0 14px 0 0;
+    }
 }
 
 #{$posts} {
@@ -61,6 +67,16 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
         border-bottom: none;
         border-bottom-left-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
+    }
+    .autocomplete-header {
+        margin-left: 0;
+    }
+    .suggestion-link {
+        display: block;
+        padding: 0 0.15rem 0 0;
+    }
+    .suggestion-post-thumbnail {
+        display: none;
     }
     // Media query for desktop
     @media only screen and (min-width: 1030px) {
@@ -90,6 +106,16 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
         width: 100%;
         float: left;
         padding: 0.5rem;
+    }
+    .autocomplete-header {
+        margin-left: 0;
+    }
+    .wrapper-suggestion-link .suggestion-link {
+        padding: 0.25rem 0.5rem;
+        display: block;
+    }
+    .wrapper-suggestion-link {
+        padding: 0.15rem 0.5rem 0.25rem 0.5rem;
     }
 }
 
@@ -131,7 +157,7 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
 
 .aa-dropdown-menu-inner{
     width: 100%;
-    max-width: 1470px;
+    max-width: 1240px;
     margin-left: auto;
     margin-right: auto;
     border:0px !important;
@@ -151,7 +177,7 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
 /* Font */
 
 .aa-dropdown-menu a {
-    font-size: 12px;
+    //font-size: 12px;
     color: #1a1a1a;
     font-weight: normal;
     text-decoration: none;
@@ -161,8 +187,8 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
 }
 
 /* Header */
-.aa-dropdown-menu .autocomplete-header {
-    margin: 0 14px;
+.autocomplete-header {
+    margin: 1rem 0 0.75rem 0.75rem;
     line-height: 3em;
 }
 
@@ -239,11 +265,6 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
     background-color: #f9f9f9;
 }
 
-.aa-dropdown-menu a.suggestion-link {
-    display: block;
-    padding: 0 14px;
-}
-
 .aa-dropdown-menu a.suggestion-link.user-suggestion-link {
     line-height: 32px;
 }
@@ -306,8 +327,9 @@ body .thinner {
     font-weight: lighter;
 }
 
-.suggestion-product-title {
-    font-size: 1rem;
+.suggestion-product-title,
+.autocomplete-header-title {
+    font-size: 1.125rem;
     line-height: 1.5rem;
     color: #333333;
 }
@@ -322,7 +344,7 @@ body .thinner {
     background-color: #eaeaea;
     padding: 0.5rem;
     border-radius: 1.25rem;
-    margin: 0.25rem;
+    margin: 0 0.5rem 0 0;
     display: inline-block;
     &:hover {
         background-color: #ccc;
@@ -357,7 +379,7 @@ body .thinner {
     }
     .r-wrapper {
         float:none;
-        margin: 1rem;
+        margin: 0 1rem 1rem 1rem;
     }
 }
 
@@ -373,10 +395,8 @@ body .thinner {
         width: 50%;
     }
     .aa-dropdown-menu .autocomplete-header {
-        margin: 0.75rem 0;
-    }
-    .wrapper-suggestion-link {
-        margin: 0 0.5rem 0 0;
+        margin-left: 0;
     }
 }
+
 

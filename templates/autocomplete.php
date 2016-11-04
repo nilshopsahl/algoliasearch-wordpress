@@ -1,6 +1,6 @@
 <script type="text/html" id="tmpl-autocomplete-header">
 	<div class="autocomplete-header">
-		<div class="autocomplete-header-title">Treff på {{{ data.label }}} <span class="thinner">({{{ data.hits }}})<span></div>
+		<div><h2 class="autocomplete-header-title">Treff på {{{ data.label }}} <span class="thinner">({{{ data.hits }}})<span></h2></div>
 		<div class="clear"></div>
 	</div>
 </script>
