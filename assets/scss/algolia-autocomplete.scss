@@ -276,6 +276,7 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
     float: left;
 }
 
+//this applies only to the products at the moment
 .aa-dropdown-menu .suggestion-post-thumbnail {
     float: left;
     margin-right: 5px;
@@ -355,7 +356,7 @@ body .thinner {
     margin-bottom: 0;
 }
 
-//Tag suggestions
+// Tag suggestions, title
 .aa-suggestion .suggestion-tag-title {
     margin-bottom: 0;
     text-transform: capitalize;
@@ -370,8 +371,8 @@ body .thinner {
     background-color: #eaeaea;
 }
 
+/* For mobile phones and tablets only */
 @media only screen and (max-width: 1029px) {
-    /* For mobile phones and tablets only */
     .aa-dropdown-menu {
         min-width: inherit;
         max-width: inherit;

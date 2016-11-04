@@ -297,8 +297,8 @@ body .thinner {
 .wrapper-autocomplete-post-suggestion {
   background-color: #eaeaea; }
 
+/* For mobile phones and tablets only */
 @media only screen and (max-width: 1029px) {
-  /* For mobile phones and tablets only */
   .aa-dropdown-menu {
     min-width: inherit;
     max-width: inherit;
