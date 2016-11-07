@@ -16,7 +16,7 @@ so these variables help show which class is what thing */
   .aa-dataset-3 .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestion:first-of-type {
     border-top: 1px solid #eaeaea; }
   .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
-    padding-bottom: 0.75rem; }
+    padding-bottom: 0.5rem; }
   .aa-dataset-3 .autocomplete-header, .aa-dataset-0 .autocomplete-header {
     margin-left: 1rem; }
   .aa-dataset-3 .suggestion-link, .aa-dataset-0 .suggestion-link {
@@ -236,10 +236,10 @@ so these variables help show which class is what thing */
 .aa-dropdown-menu .suggestion-post-thumbnail {
   float: left;
   margin-right: 1rem;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   border-radius: 3px;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border: 1px solid gainsboro; }
 
 .aa-dropdown-menu .suggestion-user-thumbnail {
