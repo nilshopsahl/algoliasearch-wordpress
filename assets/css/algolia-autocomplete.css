@@ -45,6 +45,14 @@ so these variables help show which class is what thing */
         border-bottom-left-radius: 0.25rem;
         border-bottom-right-radius: 0.25rem; } }
 
+.aa-dataset-3 .aa-suggestion, .aa-dataset-0 .aa-suggestion {
+  width: 50%;
+  float: left; }
+@media only screen and (min-width: 1030px) {
+  .aa-dataset-3 .aa-suggestion, .aa-dataset-0 .aa-suggestion {
+    width: 33%;
+    float: left; } }
+
 .aa-dataset-4, .aa-dataset-1 {
   width: 100%; }
   .aa-dataset-4 .aa-suggestions, .aa-dataset-1 .aa-suggestions {
