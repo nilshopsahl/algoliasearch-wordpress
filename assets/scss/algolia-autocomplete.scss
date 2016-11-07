@@ -5,17 +5,27 @@ $products: '.aa-dataset-3, .aa-dataset-0';
 $posts: '.aa-dataset-4, .aa-dataset-1';
 $tags: '.aa-dataset-5, .aa-dataset-2';
 
-// clearfix the datasets
+// table radius for the tables listing products and posts
+$table-radius: 0.25rem;
+
+// clearfix the datasets and set the font size for all search results
 #{$products}, #{$posts}, #{$tags} {
     &:before, &:after { content: " "; display: table; }
     &:after { clear: both; }
     *zoom: 1;
+    p, h2, em {
+        font-size: 0.875rem;
+        line-height: 140%;
+    }
 }
 
 #{$products} {
     width: 100%;
     .aa-suggestion:first-of-type {
-        border-top:1px solid gainsboro;
+        border-top:1px solid #eaeaea;
+    }
+    .aa-suggestions .aa-suggestion {
+        padding-bottom: 0.75rem;
     }
     // Media query for desktop
     @media only screen and (min-width: 1030px) {
@@ -23,21 +33,21 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
         float: left;
         padding: 0.5rem;
         .aa-suggestions {
-            border: 1px #ccc solid;
-            border-radius: 0.5rem;
+            border: 1px #eaeaea solid;
+            border-radius: $table-radius;
         }
         .aa-suggestion:hover {
             background-color: #f8f8f8;
         }
         .aa-suggestion:first-of-type {
-            border-top-left-radius: 0.5rem;
-            border-top-right-radius: 0.5rem;
+            border-top-left-radius: $table-radius;
+            border-top-right-radius: $table-radius;
             border-top: none;
         }
         .aa-suggestion:last-of-type {
             border-bottom: none;
-            border-bottom-left-radius: 0.5rem;
-            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: $table-radius;
+            border-bottom-right-radius: $table-radius;
         }
     }
     .autocomplete-header {
@@ -53,20 +63,20 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
     width: 100%;
     .aa-suggestions {
         background-color: #f8f8f8;
-        border: 1px #ccc solid;
-        border-radius: 0.5rem;
+        border: 1px #eaeaea solid;
+        border-radius: $table-radius;
         .aa-suggestion:hover {
-            background-color: #fff;
+            background-color: darken(#eaeaea, 3%);
         }
     }
     .aa-suggestion:first-of-type {
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
+        border-top-left-radius: $table-radius;
+        border-top-right-radius: $table-radius;
     }
     .aa-suggestion:last-of-type {
         border-bottom: none;
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
+        border-bottom-left-radius: $table-radius;
+        border-bottom-right-radius: $table-radius;
     }
     .autocomplete-header {
         margin-left: 0;
@@ -77,6 +87,12 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
     }
     .suggestion-post-thumbnail {
         display: none;
+    }
+    .aa-suggestion p.suggestion-post-content {
+        display: none;
+    }
+    h2 {
+        font-weight: normal;
     }
     // Media query for desktop
     @media only screen and (min-width: 1030px) {
@@ -117,6 +133,10 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
     .wrapper-suggestion-link {
         padding: 0.15rem 0.5rem 0.25rem 0.5rem;
     }
+}
+
+.title-element {
+    text-transform: lowercase;
 }
 
 .aa-dropdown-menu {
@@ -188,8 +208,7 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
 
 /* Header */
 .autocomplete-header {
-    margin: 1rem 0 0.75rem 0.75rem;
-    line-height: 3em;
+    margin: 1.5rem 0 0.75rem 0.75rem;
 }
 
 .aa-dropdown-menu .autocomplete-header-title,
@@ -220,7 +239,7 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
 
 .aa-dropdown-menu .aa-suggestion {
     padding: 1rem;
-    border-bottom:1px solid gainsboro;
+    border-bottom:1px solid #eaeaea;
 }
 
 .aa-dropdown-menu .aa-suggestion:after {
@@ -264,11 +283,6 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
 .aa-suggestion.aa-cursor {
     background-color: #f9f9f9;
 }
-
-.aa-dropdown-menu a.suggestion-link.user-suggestion-link {
-    line-height: 32px;
-}
-
 
 .aa-dropdown-menu a.suggestion-link svg {
     vertical-align: middle;
@@ -330,8 +344,6 @@ body .thinner {
 
 .suggestion-product-title,
 .autocomplete-header-title {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
     color: #333333;
 }
 
@@ -348,7 +360,7 @@ body .thinner {
     margin: 0 0.5rem 0 0;
     display: inline-block;
     &:hover {
-        background-color: #ccc;
+        background-color: darken(#eaeaea, 3%);
     }
 }
 

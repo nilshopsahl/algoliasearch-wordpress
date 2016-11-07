@@ -7,29 +7,34 @@ so these variables help show which class is what thing */
     display: table; }
   .aa-dataset-3:after, .aa-dataset-0:after, .aa-dataset-4:after, .aa-dataset-1:after, .aa-dataset-5:after, .aa-dataset-2:after {
     clear: both; }
+  .aa-dataset-3 p, .aa-dataset-3 h2, .aa-dataset-3 em, .aa-dataset-0 p, .aa-dataset-0 h2, .aa-dataset-0 em, .aa-dataset-4 p, .aa-dataset-4 h2, .aa-dataset-4 em, .aa-dataset-1 p, .aa-dataset-1 h2, .aa-dataset-1 em, .aa-dataset-5 p, .aa-dataset-5 h2, .aa-dataset-5 em, .aa-dataset-2 p, .aa-dataset-2 h2, .aa-dataset-2 em {
+    font-size: 0.875rem;
+    line-height: 140%; }
 
 .aa-dataset-3, .aa-dataset-0 {
   width: 100%; }
   .aa-dataset-3 .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestion:first-of-type {
-    border-top: 1px solid gainsboro; }
+    border-top: 1px solid #eaeaea; }
+  .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
+    padding-bottom: 0.75rem; }
   @media only screen and (min-width: 1030px) {
     .aa-dataset-3, .aa-dataset-0 {
       width: 50%;
       float: left;
       padding: 0.5rem; }
       .aa-dataset-3 .aa-suggestions, .aa-dataset-0 .aa-suggestions {
-        border: 1px #ccc solid;
-        border-radius: 0.5rem; }
+        border: 1px #eaeaea solid;
+        border-radius: 0.25rem; }
       .aa-dataset-3 .aa-suggestion:hover, .aa-dataset-0 .aa-suggestion:hover {
         background-color: #f8f8f8; }
       .aa-dataset-3 .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestion:first-of-type {
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
         border-top: none; }
       .aa-dataset-3 .aa-suggestion:last-of-type, .aa-dataset-0 .aa-suggestion:last-of-type {
         border-bottom: none;
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem; } }
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem; } }
   .aa-dataset-3 .autocomplete-header, .aa-dataset-0 .autocomplete-header {
     margin-left: 1rem; }
   .aa-dataset-3 .suggestion-link, .aa-dataset-0 .suggestion-link {
@@ -40,17 +45,17 @@ so these variables help show which class is what thing */
   width: 100%; }
   .aa-dataset-4 .aa-suggestions, .aa-dataset-1 .aa-suggestions {
     background-color: #f8f8f8;
-    border: 1px #ccc solid;
-    border-radius: 0.5rem; }
+    border: 1px #eaeaea solid;
+    border-radius: 0.25rem; }
     .aa-dataset-4 .aa-suggestions .aa-suggestion:hover, .aa-dataset-1 .aa-suggestions .aa-suggestion:hover {
-      background-color: #fff; }
+      background-color: #e2e2e2; }
   .aa-dataset-4 .aa-suggestion:first-of-type, .aa-dataset-1 .aa-suggestion:first-of-type {
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem; }
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
   .aa-dataset-4 .aa-suggestion:last-of-type, .aa-dataset-1 .aa-suggestion:last-of-type {
     border-bottom: none;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem; }
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem; }
   .aa-dataset-4 .autocomplete-header, .aa-dataset-1 .autocomplete-header {
     margin-left: 0; }
   .aa-dataset-4 .suggestion-link, .aa-dataset-1 .suggestion-link {
@@ -58,6 +63,10 @@ so these variables help show which class is what thing */
     padding: 0 0.15rem 0 0; }
   .aa-dataset-4 .suggestion-post-thumbnail, .aa-dataset-1 .suggestion-post-thumbnail {
     display: none; }
+  .aa-dataset-4 .aa-suggestion p.suggestion-post-content, .aa-dataset-1 .aa-suggestion p.suggestion-post-content {
+    display: none; }
+  .aa-dataset-4 h2, .aa-dataset-1 h2 {
+    font-weight: normal; }
   @media only screen and (min-width: 1030px) {
     .aa-dataset-4, .aa-dataset-1 {
       width: 100%;
@@ -88,6 +97,9 @@ so these variables help show which class is what thing */
     display: block; }
   .aa-dataset-5 .wrapper-suggestion-link, .aa-dataset-2 .wrapper-suggestion-link {
     padding: 0.15rem 0.5rem 0.25rem 0.5rem; }
+
+.title-element {
+  text-transform: lowercase; }
 
 .aa-dropdown-menu {
   /* we set the width in JS */
@@ -151,8 +163,7 @@ so these variables help show which class is what thing */
 
 /* Header */
 .autocomplete-header {
-  margin: 1rem 0 0.75rem 0.75rem;
-  line-height: 3em; }
+  margin: 1.5rem 0 0.75rem 0.75rem; }
 
 .aa-dropdown-menu .autocomplete-header-title,
 .aa-dropdown-menu .autocomplete-header-more {
@@ -176,7 +187,7 @@ so these variables help show which class is what thing */
 /* Suggestion */
 .aa-dropdown-menu .aa-suggestion {
   padding: 1rem;
-  border-bottom: 1px solid gainsboro; }
+  border-bottom: 1px solid #eaeaea; }
 
 .aa-dropdown-menu .aa-suggestion:after {
   visibility: hidden;
@@ -212,9 +223,6 @@ so these variables help show which class is what thing */
 
 .aa-suggestion.aa-cursor {
   background-color: #f9f9f9; }
-
-.aa-dropdown-menu a.suggestion-link.user-suggestion-link {
-  line-height: 32px; }
 
 .aa-dropdown-menu a.suggestion-link svg {
   vertical-align: middle;
@@ -266,8 +274,6 @@ body .thinner {
 
 .suggestion-product-title,
 .autocomplete-header-title {
-  font-size: 1.125rem;
-  line-height: 1.5rem;
   color: #333333; }
 
 .suggestion-post-price {
@@ -281,7 +287,7 @@ body .thinner {
   margin: 0 0.5rem 0 0;
   display: inline-block; }
   .wrapper-suggestion-link:hover {
-    background-color: #ccc; }
+    background-color: #e2e2e2; }
 
 .suggestion-post-content {
   margin-bottom: 0; }
