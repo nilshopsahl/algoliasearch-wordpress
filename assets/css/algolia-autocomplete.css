@@ -67,8 +67,6 @@ so these variables help show which class is what thing */
     padding: 0 0.15rem 0 0; }
   .aa-dataset-4 .suggestion-post-thumbnail, .aa-dataset-1 .suggestion-post-thumbnail {
     display: none; }
-  .aa-dataset-4 .aa-suggestion p.suggestion-post-content, .aa-dataset-1 .aa-suggestion p.suggestion-post-content {
-    display: none; }
   .aa-dataset-4 h2, .aa-dataset-1 h2 {
     font-weight: normal; }
   .aa-dataset-4 .aa-suggestions .aa-suggestion, .aa-dataset-1 .aa-suggestions .aa-suggestion {
