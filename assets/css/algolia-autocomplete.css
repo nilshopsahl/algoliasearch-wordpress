@@ -17,6 +17,15 @@ so these variables help show which class is what thing */
     border-top: 1px solid #eaeaea; }
   .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
     padding-bottom: 0.75rem; }
+  .aa-dataset-3 .autocomplete-header, .aa-dataset-0 .autocomplete-header {
+    margin-left: 1rem; }
+  .aa-dataset-3 .suggestion-link, .aa-dataset-0 .suggestion-link {
+    display: block;
+    padding: 0 14px 0 0; }
+  .aa-dataset-3 .suggestion-post-price, .aa-dataset-0 .suggestion-post-price {
+    margin-top: 0.5rem; }
+  .aa-dataset-3 .amount, .aa-dataset-0 .amount {
+    font-size: 1.0625rem; }
   @media only screen and (min-width: 1030px) {
     .aa-dataset-3, .aa-dataset-0 {
       width: 50%;
@@ -35,11 +44,6 @@ so these variables help show which class is what thing */
         border-bottom: none;
         border-bottom-left-radius: 0.25rem;
         border-bottom-right-radius: 0.25rem; } }
-  .aa-dataset-3 .autocomplete-header, .aa-dataset-0 .autocomplete-header {
-    margin-left: 1rem; }
-  .aa-dataset-3 .suggestion-link, .aa-dataset-0 .suggestion-link {
-    display: block;
-    padding: 0 14px 0 0; }
 
 .aa-dataset-4, .aa-dataset-1 {
   width: 100%; }
@@ -67,6 +71,8 @@ so these variables help show which class is what thing */
     display: none; }
   .aa-dataset-4 h2, .aa-dataset-1 h2 {
     font-weight: normal; }
+  .aa-dataset-4 .aa-suggestions .aa-suggestion, .aa-dataset-1 .aa-suggestions .aa-suggestion {
+    padding: 1.5rem 1.25rem 1.5rem 1.25rem; }
   @media only screen and (min-width: 1030px) {
     .aa-dataset-4, .aa-dataset-1 {
       width: 100%;
@@ -231,7 +237,7 @@ so these variables help show which class is what thing */
 
 .aa-dropdown-menu .suggestion-post-thumbnail {
   float: left;
-  margin-right: 5px;
+  margin-right: 1rem;
   margin-bottom: 5px;
   border-radius: 3px;
   width: 80px;

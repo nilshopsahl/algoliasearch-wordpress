@@ -27,6 +27,20 @@ $table-radius: 0.25rem;
     .aa-suggestions .aa-suggestion {
         padding-bottom: 0.75rem;
     }
+    .autocomplete-header {
+        margin-left: 1rem;
+    }
+    .suggestion-link {
+        display: block;
+        padding: 0 14px 0 0;
+    }
+    .suggestion-post-price {
+        margin-top: 0.5rem;
+    }
+    .amount {
+        font-size: 1.0625rem;
+    }
+
     // Media query for desktop
     @media only screen and (min-width: 1030px) {
         width: 50%;
@@ -49,13 +63,6 @@ $table-radius: 0.25rem;
             border-bottom-left-radius: $table-radius;
             border-bottom-right-radius: $table-radius;
         }
-    }
-    .autocomplete-header {
-        margin-left: 1rem;
-    }
-    .suggestion-link {
-        display: block;
-        padding: 0 14px 0 0;
     }
 }
 
@@ -93,6 +100,9 @@ $table-radius: 0.25rem;
     }
     h2 {
         font-weight: normal;
+    }
+    .aa-suggestions .aa-suggestion {
+        padding: 1.5rem 1.25rem 1.5rem 1.25rem;
     }
     // Media query for desktop
     @media only screen and (min-width: 1030px) {
@@ -293,7 +303,7 @@ $table-radius: 0.25rem;
 //this applies only to the products at the moment
 .aa-dropdown-menu .suggestion-post-thumbnail {
     float: left;
-    margin-right: 5px;
+    margin-right: 1rem;
     margin-bottom: 5px;
     border-radius: 3px;
     width: 80px;
