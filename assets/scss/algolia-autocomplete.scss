@@ -117,6 +117,7 @@ $border-color: #eaeaea;
         object-fit: contain;
       }
 
+      //mobile styles only
       @media (max-width: 1029px) {
 
         .suggestion-post-thumbnail{
@@ -140,8 +141,12 @@ $border-color: #eaeaea;
         }
         // if results = 4
         @include element-count( 4, equal ) {
-          &:nth-child(4) {
+          &:nth-child(4),
+          &:nth-child(3) {
             border-bottom: 0;
+          }
+          &:first-of-type {
+            border-top: none;
           }
         }
 

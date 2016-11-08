@@ -93,8 +93,10 @@ so these variables help show which class is what thing */
         .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(2n+2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(2n+2) {
           border-right: none;
           clear: right; }
-        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(4), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(4), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(4), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(4) {
-          border-bottom: 0; } }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(4), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(3), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(4), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(4), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(4), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(3) {
+          border-bottom: 0; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:first-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:first-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:first-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:first-of-type {
+          border-top: none; } }
     @media (min-width: 1030px) {
       .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
         width: 33%;
