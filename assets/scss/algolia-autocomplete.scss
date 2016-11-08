@@ -7,6 +7,7 @@ $tags: '.aa-dataset-5, .aa-dataset-2';
 
 // table radius for the tables listing products and posts
 $table-radius: 0.25rem;
+$border-color: #eaeaea;
 
 // clearfix the datasets and set the font size for all search results
 #{$products}, #{$posts}, #{$tags} {
@@ -22,7 +23,7 @@ $table-radius: 0.25rem;
 #{$products} {
   width: 100%;
   .aa-suggestion:first-of-type {
-    border-top:1px solid #eaeaea;
+    border-top:1px solid $border-color;
   }
   .aa-suggestions .aa-suggestion {
     padding-bottom: 0.5rem;
@@ -47,7 +48,7 @@ $table-radius: 0.25rem;
       float: left;
       padding: 0.5rem;
       .aa-suggestions {
-        border: 1px #eaeaea solid;
+        border: 1px $border-color solid;
         border-radius: $table-radius;
       }
       .aa-suggestion:hover {
@@ -68,15 +69,68 @@ $table-radius: 0.25rem;
 
 // Grid view
 #{$products} {
-  .aa-suggestion{
+  .aa-suggestions {
+    &:before, &:after { content: " "; display: table; }
+    &:after { clear: both; }
+    *zoom: 1;
+    border: 1px solid $border-color;
+    border-radius: $table-radius;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .aa-suggestions .aa-suggestion {
     width: 50%;
     float: left;
+    display: block;
+    border-right: 1px solid $border-color;
+    border-top: 1px solid $border-color;
+    border-bottom: none;
+    &:first-child {
+      border-top: none;
+      border-top-left-radius: $table-radius;
+    }
+    &:nth-child(2) {
+      border-top: none;
+    }
+    &:nth-last-child(2) {
+      border-bottom-left-radius: $table-radius;
+    }
+    &:last-child {
+      border-bottom-right-radius: $table-radius;
+    }
+  }
+  .aa-suggestions .suggestion-post-thumbnail {
+    width: 100%;
+    height: auto;
+    border: none;
+    display: block;
+    float: none;
+  }
+  //Media query only applies to mobile and tablet
+  @media (max-width: 1029px) {
+    .aa-suggestions .aa-suggestion {
+      &:nth-child(even) {
+        border-right: none;
+      }
+      &:nth-child(2) {
+        border-top-right-radius: $table-radius;
+      }
+    }
   }
   // Media query for desktop
-  @media only screen and (min-width: 1030px) {
-    .aa-suggestion{
+  @media (min-width: 1030px) {
+    .aa-suggestions .aa-suggestion{
       width: 33%;
       float: left;
+      text-align: center;
+      &:nth-child(3n) {
+        border-right: none;
+      }
+      &:nth-child(3) {
+        border-top: none;
+        border-top-right-radius: $table-radius;
+      }
+
     }
   }
 }
@@ -86,10 +140,10 @@ $table-radius: 0.25rem;
   width: 100%;
   .aa-suggestions {
     background-color: #f8f8f8;
-    border: 1px #eaeaea solid;
+    border: 1px $border-color solid;
     border-radius: $table-radius;
     .aa-suggestion:hover {
-      background-color: darken(#eaeaea, 3%);
+      background-color: darken($border-color, 3%);
     }
   }
   .aa-suggestion:first-of-type {

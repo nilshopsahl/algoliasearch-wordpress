@@ -237,6 +237,12 @@ class Algolia_Plugin {
 
 		// Vendor JS.
 		wp_register_script( 'tether', plugin_dir_url( __FILE__ ) . '../assets/js/tether/tether'.$suffix.'.js', array(), ALGOLIA_VERSION );
+
+		// equaliser
+		// wp_register_script( 'equaliser', plugin_dir_url( __FILE__ ) . '../assets/js/equaliser/equaliser'.$suffix.'.js', array(), ALGOLIA_VERSION );
+		// wp_register_script( 'equaliser-elements', plugin_dir_url( __FILE__ ) . '../assets/js/equaliser/equaliser-elements'.$suffix.'.js', array(), ALGOLIA_VERSION );
+		wp_register_script( 'equaliser', plugin_dir_url( __FILE__ ) . '../assets/js/equaliser/equaliser.js', array(), ALGOLIA_VERSION );
+		wp_register_script( 'equaliser-elements', plugin_dir_url( __FILE__ ) . '../assets/js/equaliser/equaliser-elements.js', array(), ALGOLIA_VERSION );
 	}
 
 	/**
