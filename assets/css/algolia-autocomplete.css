@@ -80,17 +80,35 @@ so these variables help show which class is what thing */
       width: 100%;
       float: none;
       text-align: center; }
+    @media (max-width: 1029px) {
+      .aa-dataset-3 .aa-suggestions .aa-suggestion:only-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:only-child {
+        border-bottom: 0; }
+      .aa-dataset-3 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(3n+4), .aa-dataset-0 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(3n+4) {
+        clear: left; }
+      .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(2n+2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(2n+2) {
+        border-right: none;
+        clear: right; } }
     @media (min-width: 1030px) {
       .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
         width: 33%;
         min-height: 16rem;
         /* ELEMENT COUNTING FOR SORTING OUT BORDERS */ }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:only-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:only-child {
+          border-bottom: 0; }
         .aa-dataset-3 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(3n+4), .aa-dataset-0 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(3n+4) {
           clear: left; }
         .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(3n+3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(3n+3) {
           border-right: none;
           clear: right; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(2):first-child:first-child, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(2):first-child:nth-child(2), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(2):first-child ~ *:first-child, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(2):first-child ~ *:nth-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(2):first-child:first-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(2):first-child:nth-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(2):first-child ~ *:first-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(2):first-child ~ *:nth-child(2) {
+          border-bottom: 0; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child:first-child, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child:nth-child(2), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child:nth-child(3), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child ~ *:first-child, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child ~ *:nth-child(2), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child ~ *:nth-child(3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child:first-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child:nth-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child:nth-child(3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child ~ *:first-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child ~ *:nth-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(3):first-child ~ *:nth-child(3) {
+          border-bottom: 0; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(4), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(4), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(4), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(4) {
+          border-bottom: 0; }
         .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child:last-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child:nth-last-child(2), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child ~ *:last-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child ~ *:nth-last-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child:last-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child:nth-last-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child ~ *:last-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child ~ *:nth-last-child(2) {
+          border-bottom: 0; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child:last-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child:nth-last-child(2), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child:nth-last-child(3), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child ~ *:last-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child ~ *:nth-last-child(2), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child ~ *:nth-last-child(3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child:last-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child:nth-last-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child:nth-last-child(3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child ~ *:last-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child ~ *:nth-last-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(6):first-child ~ *:nth-last-child(3) {
           border-bottom: 0; } }
 
 .aa-dataset-4, .aa-dataset-1 {

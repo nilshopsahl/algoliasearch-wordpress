@@ -117,6 +117,31 @@ $border-color: #eaeaea;
         text-align: center;
       }
 
+      @media (max-width: 1029px) {
+        min-height: 16rem;
+        &:only-child{
+          border-bottom: 0;
+        }
+        // The 4nth one never has a right border
+        &:first-of-type,
+        &:nth-of-type(3n+4) {
+          clear: left;
+        }
+        // The 2nth one never has a right border
+        &:nth-of-type(2n+2) {
+          border-right: none;
+          clear: right;
+        }
+        // if results = 4
+        @include element-count( 4, equal ) {
+          &:nth-child(4) {
+            border-bottom: 0;
+          }
+        }
+
+      }
+
+
       // Media query for desktop
       // everything is in 1/3rds
       @media (min-width: 1030px) {
@@ -127,19 +152,40 @@ $border-color: #eaeaea;
           border-bottom: 0;
         }
 
-        // The 3nth one never has a right.
+        // The 4nth one never has a right border
         &:first-of-type,
         &:nth-of-type(3n+4) {
           clear: left;
         }
 
-        // The 3nth one never has a right.
+        // The 3nth one never has a right border
         &:nth-of-type(3n+3) {
           border-right: none;
           clear: right;
         }
 
         /* ELEMENT COUNTING FOR SORTING OUT BORDERS */
+        // if results = 2
+        @include element-count( 2, equal ) {
+          &:first-child,
+          &:nth-child(2) {
+            border-bottom: 0;
+          }
+        }
+        // if results = 3
+        @include element-count( 3, equal ) {
+          &:first-child,
+          &:nth-child(2),
+          &:nth-child(3) {
+            border-bottom: 0;
+          }
+        }
+        // if results = 4
+        @include element-count( 4, equal ) {
+          &:nth-child(4) {
+            border-bottom: 0;
+          }
+        }
         // if results = 5
         @include element-count( 5, equal ) {
           &:last-of-type,
@@ -147,7 +193,6 @@ $border-color: #eaeaea;
             border-bottom: 0;
           }
         }
-
         // if results = 6
         @include element-count( 6, equal ) {
           &:last-of-type,
@@ -156,13 +201,6 @@ $border-color: #eaeaea;
             border-bottom: 0;
           }
         }
-
-
-
-
-
-
-
 
       }
     }
@@ -297,7 +335,6 @@ $border-color: #eaeaea;
     border:0px !important;
     position: relative !important;
     background-color: #fff;
-
   }
 
   .aa-dropdown-menu .aa-input, .aa-dropdown-menu .aa-hint {

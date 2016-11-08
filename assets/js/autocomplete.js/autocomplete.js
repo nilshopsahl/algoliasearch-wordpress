@@ -2332,8 +2332,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (!areEquivalent) {
 	      this.trigger('queryChanged', this.query);
-
-	      console.log( 'kfjgnsdflgiuhddfgdf' );
 	    } else if (hasDifferentWhitespace) {
 	      this.trigger('whitespaceChanged', this.query);
 	    }
