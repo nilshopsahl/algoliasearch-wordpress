@@ -67,6 +67,17 @@ $border-color: #eaeaea;
     }
   }
 
+// Mixin to count how many elements there are, then do css
+// when these requirements are met.
+@mixin element-count( $number, $comparison: 'equal' ) { $nth: '';
+  @if index( ('greater' 'more' '>'), $comparison ) { $nth: 'n + #{$number}'; }
+  @else if index( ('less' 'fewer' '<'), $comparison ) { $nth: '-n + #{$number}'; }
+  @else if index( ('equal' 'same' '='), $comparison ) { $nth: $number; }
+  @else { @warn "Sorry, that's an invalid $comparison value." }
+  &:nth-last-child(#{$nth}):first-child { &, & ~ * { @content; } }
+}
+
+
 // Grid view
 #{$products} {
   .aa-suggestions {
@@ -77,60 +88,83 @@ $border-color: #eaeaea;
     border-radius: $table-radius;
     width: 90%;
     margin: 0 auto;
-  }
-  .aa-suggestions .aa-suggestion {
-    width: 50%;
-    float: left;
-    display: block;
-    border-right: 1px solid $border-color;
-    border-top: 1px solid $border-color;
-    border-bottom: none;
-    &:first-child {
-      border-top: none;
-      border-top-left-radius: $table-radius;
-    }
-    &:nth-child(2) {
-      border-top: none;
-    }
-    &:nth-last-child(2) {
-      border-bottom-left-radius: $table-radius;
-    }
-    &:last-child {
-      border-bottom-right-radius: $table-radius;
-    }
-  }
-  .aa-suggestions .suggestion-post-thumbnail {
-    width: 100%;
-    height: auto;
-    border: none;
-    display: block;
-    float: none;
-  }
-  //Media query only applies to mobile and tablet
-  @media (max-width: 1029px) {
-    .aa-suggestions .aa-suggestion {
-      &:nth-child(even) {
-        border-right: none;
-      }
-      &:nth-child(2) {
-        border-top-right-radius: $table-radius;
-      }
-    }
-  }
-  // Media query for desktop
-  @media (min-width: 1030px) {
-    .aa-suggestions .aa-suggestion{
-      width: 33%;
+
+   .aa-suggestion {
+      width: 50%;
       float: left;
+      display: block;
       text-align: center;
-      &:nth-child(3n) {
-        border-right: none;
-      }
-      &:nth-child(3) {
-        border-top: none;
-        border-top-right-radius: $table-radius;
+      border-radius: 0;
+      border-bottom: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+
+      .suggestion-link{
+        padding: 0;
+        width: 100%;
+        display: block;
       }
 
+      .suggestion-post-thumbnail,
+      .suggestion-post-attributes{
+        border: 0;
+        padding: 0;
+        margin: 0;
+        display: block;
+        height: auto;
+        object-fit: contain;
+        width: 100%;
+        float: none;
+        text-align: center;
+      }
+
+      // Media query for desktop
+      // everything is in 1/3rds
+      @media (min-width: 1030px) {
+        width: 33%;
+        min-height: 16rem;
+
+        &:only-child{
+          border-bottom: 0;
+        }
+
+        // The 3nth one never has a right.
+        &:first-of-type,
+        &:nth-of-type(3n+4) {
+          clear: left;
+        }
+
+        // The 3nth one never has a right.
+        &:nth-of-type(3n+3) {
+          border-right: none;
+          clear: right;
+        }
+
+        /* ELEMENT COUNTING FOR SORTING OUT BORDERS */
+        // if results = 5
+        @include element-count( 5, equal ) {
+          &:last-of-type,
+          &:nth-last-child(2){
+            border-bottom: 0;
+          }
+        }
+
+        // if results = 6
+        @include element-count( 6, equal ) {
+          &:last-of-type,
+          &:nth-last-child(2),
+          &:nth-last-child(3) {
+            border-bottom: 0;
+          }
+        }
+
+
+
+
+
+
+
+
+      }
     }
   }
 }

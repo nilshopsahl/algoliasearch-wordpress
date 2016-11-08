@@ -26,7 +26,7 @@ jQuery( function( $ ) {
   }
 
   // On that trigger, we want to do something.
-  $.on( 'datasetRendered', function() {
+  $( document ).on( 'datasetRendered', function() {
     // DO things.
     console.log( 'dataset rendered' );
     resizeElements();
@@ -41,6 +41,7 @@ jQuery( function( $ ) {
     }, 240, uniqId())
   });
 });
+
 
 
 // Equalise function

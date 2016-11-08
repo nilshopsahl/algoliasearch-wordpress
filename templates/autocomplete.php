@@ -200,9 +200,9 @@
 		});
 
 		/* Find top position of element next after header. */
-		var p = jQuery( ".header:first" );
-		var position = p.nextAll("div").position();
-		jQuery(".aa-dropdown-menu").css("top",position.top);
+		// var p = jQuery( ".header:first" );
+		// var position = p.nextAll("div").position();
+		// jQuery(".aa-dropdown-menu").css("top",position.top);
  		//console.log("bottom: " + position.top + p.nextAll("div").attr("class"));
 		//jQuery( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
 		jQuery(".aa-dropdown-menu").each(function() {

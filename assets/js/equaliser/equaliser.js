@@ -80,21 +80,4 @@
   // Expose:
   w.is_external = is_external;
 
-
-  // Min width detection
-  var min_width;
-  if ( Modernizr.mq('(min-width: 0px)') ) {
-    // Browsers that support media queries
-    min_width = function ( width ) {
-      return Modernizr.mq( '(min-width: ' + width + 'em)' );
-    };
-  }
-  else {
-    // Fallback for browsers that does not support media queries
-    min_width = function ( width ) {
-      return jQuery(window).width() >= width * 16;
-    };
-  }
-  // Expose:
-  w.min_width = min_width;
 } (jQuery, window) );

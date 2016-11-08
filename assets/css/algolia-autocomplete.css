@@ -56,43 +56,42 @@ so these variables help show which class is what thing */
     display: table; }
   .aa-dataset-3 .aa-suggestions:after, .aa-dataset-0 .aa-suggestions:after {
     clear: both; }
-.aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
-  width: 50%;
-  float: left;
-  display: block;
-  border-right: 1px solid #eaeaea;
-  border-top: 1px solid #eaeaea;
-  border-bottom: none; }
-  .aa-dataset-3 .aa-suggestions .aa-suggestion:first-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:first-child {
-    border-top: none;
-    border-top-left-radius: 0.25rem; }
-  .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-child(2) {
-    border-top: none; }
-  .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(2) {
-    border-bottom-left-radius: 0.25rem; }
-  .aa-dataset-3 .aa-suggestions .aa-suggestion:last-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:last-child {
-    border-bottom-right-radius: 0.25rem; }
-.aa-dataset-3 .aa-suggestions .suggestion-post-thumbnail, .aa-dataset-0 .aa-suggestions .suggestion-post-thumbnail {
-  width: 100%;
-  height: auto;
-  border: none;
-  display: block;
-  float: none; }
-@media (max-width: 1029px) {
-  .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-child(even), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-child(even) {
-    border-right: none; }
-  .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-child(2) {
-    border-top-right-radius: 0.25rem; } }
-@media (min-width: 1030px) {
   .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
-    width: 33%;
+    width: 50%;
     float: left;
-    text-align: center; }
-    .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-child(3n), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-child(3n) {
-      border-right: none; }
-    .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-child(3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-child(3) {
-      border-top: none;
-      border-top-right-radius: 0.25rem; } }
+    display: block;
+    text-align: center;
+    border-radius: 0;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea; }
+    .aa-dataset-3 .aa-suggestions .aa-suggestion .suggestion-link, .aa-dataset-0 .aa-suggestions .aa-suggestion .suggestion-link {
+      padding: 0;
+      width: 100%;
+      display: block; }
+    .aa-dataset-3 .aa-suggestions .aa-suggestion .suggestion-post-thumbnail,
+    .aa-dataset-3 .aa-suggestions .aa-suggestion .suggestion-post-attributes, .aa-dataset-0 .aa-suggestions .aa-suggestion .suggestion-post-thumbnail,
+    .aa-dataset-0 .aa-suggestions .aa-suggestion .suggestion-post-attributes {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      display: block;
+      height: auto;
+      object-fit: contain;
+      width: 100%;
+      float: none;
+      text-align: center; }
+    @media (min-width: 1030px) {
+      .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
+        width: 33%;
+        min-height: 16rem;
+        /* ELEMENT COUNTING FOR SORTING OUT BORDERS */ }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(3n+4), .aa-dataset-0 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(3n+4) {
+          clear: left; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(3n+3), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(3n+3) {
+          border-right: none;
+          clear: right; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child:last-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child:nth-last-child(2), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child ~ *:last-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child ~ *:nth-last-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child:last-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child:nth-last-child(2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child ~ *:last-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(5):first-child ~ *:nth-last-child(2) {
+          border-bottom: 0; } }
 
 .aa-dataset-4, .aa-dataset-1 {
   width: 100%; }

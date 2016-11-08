@@ -2332,6 +2332,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (!areEquivalent) {
 	      this.trigger('queryChanged', this.query);
+
+	      console.log( 'kfjgnsdflgiuhddfgdf' );
 	    } else if (hasDifferentWhitespace) {
 	      this.trigger('whitespaceChanged', this.query);
 	    }
@@ -2372,7 +2374,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this._checkInputValue();
 	    }
 	  },
-
 
 	  resetInputValue: function resetInputValue() {
 	    this.setInputValue(this.query, true);
