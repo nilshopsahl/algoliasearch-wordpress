@@ -79,7 +79,7 @@ $border-color: #eaeaea;
 
 
 // Grid view
-#{$products} {
+#{$products} { // add .grid when JS is ready
   .aa-suggestions {
     &:before, &:after { content: " "; display: table; }
     &:after { clear: both; }
@@ -111,14 +111,20 @@ $border-color: #eaeaea;
         margin: 0;
         display: block;
         height: auto;
-        object-fit: contain;
         width: 100%;
         float: none;
         text-align: center;
+        object-fit: contain;
       }
 
       @media (max-width: 1029px) {
-        min-height: 16rem;
+
+        .suggestion-post-thumbnail{
+          height: 10rem;
+          object-fit: contain;
+        }
+
+        height: 17rem;
         &:only-child{
           border-bottom: 0;
         }

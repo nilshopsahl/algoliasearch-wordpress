@@ -76,18 +76,25 @@ so these variables help show which class is what thing */
       margin: 0;
       display: block;
       height: auto;
-      object-fit: contain;
       width: 100%;
       float: none;
-      text-align: center; }
+      text-align: center;
+      object-fit: contain; }
     @media (max-width: 1029px) {
-      .aa-dataset-3 .aa-suggestions .aa-suggestion:only-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:only-child {
-        border-bottom: 0; }
-      .aa-dataset-3 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(3n+4), .aa-dataset-0 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(3n+4) {
-        clear: left; }
-      .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(2n+2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(2n+2) {
-        border-right: none;
-        clear: right; } }
+      .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
+        height: 17rem; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion .suggestion-post-thumbnail, .aa-dataset-0 .aa-suggestions .aa-suggestion .suggestion-post-thumbnail {
+          height: 10rem;
+          object-fit: contain; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:only-child, .aa-dataset-0 .aa-suggestions .aa-suggestion:only-child {
+          border-bottom: 0; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(3n+4), .aa-dataset-0 .aa-suggestions .aa-suggestion:first-of-type, .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(3n+4) {
+          clear: left; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-of-type(2n+2), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-of-type(2n+2) {
+          border-right: none;
+          clear: right; }
+        .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(4), .aa-dataset-3 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(4), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child:nth-child(4), .aa-dataset-0 .aa-suggestions .aa-suggestion:nth-last-child(4):first-child ~ *:nth-child(4) {
+          border-bottom: 0; } }
     @media (min-width: 1030px) {
       .aa-dataset-3 .aa-suggestions .aa-suggestion, .aa-dataset-0 .aa-suggestions .aa-suggestion {
         width: 33%;
