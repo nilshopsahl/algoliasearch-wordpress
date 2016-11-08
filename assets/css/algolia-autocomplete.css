@@ -1,13 +1,13 @@
 /* This plugin uses 'dataset' as the class for everything
 so these variables help show which class is what thing */
-.aa-dropdown-menu-inner > [class^="aa-dataset"], .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type {
+.aa-dropdown-menu-inner > [class^="aa-dataset"], .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] {
   *zoom: 1; }
-  .aa-dropdown-menu-inner > [class^="aa-dataset"]:before, .aa-dropdown-menu-inner > [class^="aa-dataset"]:after, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type:before, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type:after, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type:before, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type:after {
+  .aa-dropdown-menu-inner > [class^="aa-dataset"]:before, .aa-dropdown-menu-inner > [class^="aa-dataset"]:after, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type:before, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type:after, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"]:before, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"]:after {
     content: " ";
     display: table; }
-  .aa-dropdown-menu-inner > [class^="aa-dataset"]:after, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type:after, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type:after {
+  .aa-dropdown-menu-inner > [class^="aa-dataset"]:after, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type:after, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"]:after {
     clear: both; }
-  .aa-dropdown-menu-inner > [class^="aa-dataset"] p, .aa-dropdown-menu-inner > [class^="aa-dataset"] h2, .aa-dropdown-menu-inner > [class^="aa-dataset"] em, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type p, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type h2, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type em, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type p, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type h2, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type em {
+  .aa-dropdown-menu-inner > [class^="aa-dataset"] p, .aa-dropdown-menu-inner > [class^="aa-dataset"] h2, .aa-dropdown-menu-inner > [class^="aa-dataset"] em, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type p, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type h2, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type em, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] p, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] h2, .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] em {
     font-size: 0.875rem;
     line-height: 140%; }
 
@@ -151,28 +151,28 @@ so these variables help show which class is what thing */
       float: left;
       padding: 0.5rem; } }
 
-.aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type {
+.aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] {
   width: 100%; }
-  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type .aa-suggestion:first-of-type,
-  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type .aa-suggestion {
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .aa-suggestion:first-of-type,
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .aa-suggestion {
     border: 0px; }
-  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type .aa-suggestion.aa-cursor {
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .aa-suggestion.aa-cursor {
     background-color: transparent; }
-  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type .aa-suggestions .aa-suggestion {
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .aa-suggestions .aa-suggestion {
     display: inline-block;
     border: none;
     padding: 0; }
   @media only screen and (min-width: 1030px) {
-    .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type {
+    .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] {
       width: 100%;
       float: left;
       padding: 0.5rem; } }
-  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type .autocomplete-header {
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .autocomplete-header {
     margin-left: 0; }
-  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type .wrapper-suggestion-link .suggestion-link {
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .wrapper-suggestion-link .suggestion-link {
     padding: 0.25rem 0.5rem;
     display: block; }
-  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type .wrapper-suggestion-link {
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .wrapper-suggestion-link {
     padding: 0.15rem 0.5rem 0.25rem 0.5rem; }
 
 .title-element {
