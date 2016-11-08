@@ -1,9 +1,9 @@
 /* This plugin uses 'dataset' as the class for everything
 so these variables help show which class is what thing */
 
-$products: '.aa-dataset-3, .aa-dataset-0';
-$posts: '.aa-dataset-4, .aa-dataset-1';
-$tags: '.aa-dataset-5, .aa-dataset-2';
+$products: '.aa-dropdown-menu-inner > [class^="aa-dataset"]';
+$posts: '.aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:first-of-type';
+$tags: '.aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"]:last-of-type';
 
 // table radius for the tables listing products and posts
 $table-radius: 0.25rem;
