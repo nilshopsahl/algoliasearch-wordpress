@@ -25,8 +25,12 @@ jQuery( function( $ ) {
     return Math.round(new Date().getTime() + (Math.random() * 100));
   }
 
-  /* On Resize, load and init, we shall resize the elements */
-  $( window ).on( 'load', resizeElements.debounce( 250, true ) );
+  // On that trigger, we want to do something.
+  $.on( 'datasetRendered', function() {
+    // DO things.
+    console.log( 'dataset rendered' );
+    resizeElements();
+  });
 
   /* On resize... */
   $( window ).resize( function() {
