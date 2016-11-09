@@ -265,10 +265,7 @@ so these variables help show which class is what thing */
   left: 0 !important;
   background-color: #fff;
   overflow-x: hidden;
-  /* Disable horizontal scroll */
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */ }
+  /* Disable horizontal scroll */ }
 
 .aa-dropdown-menu-inner {
   width: 100%;
