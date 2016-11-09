@@ -39,6 +39,9 @@ $border-color: #eaeaea;
   img.active {
     display: none;
   }
+  img {
+    float: left;
+  }
   &.active {
     background-color: #494949;
     border-color: transparent;
@@ -121,7 +124,7 @@ $border-color: #eaeaea;
 
 
 // Grid view
-#{$products} .grid {
+.algoliasearch-grid #{$products} {
   .aa-suggestions {
     &:before, &:after { content: " "; display: table; }
     &:after { clear: both; }
@@ -406,7 +409,7 @@ $border-color: #eaeaea;
     background-color: #fff;
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-    transform: translate(0) !important;
+    // transform: translate(0) !important;
   }
 
   .aa-dropdown-menu-inner{
