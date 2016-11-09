@@ -271,8 +271,7 @@ so these variables help show which class is what thing */
   background-color: #fff;
   overflow-x: hidden;
   /* Disable horizontal scroll */
-  transform: translateY(181) !important;
-  transform: translateX(0) !important; }
+  transform: translateY(181px) translateX(0) !important; }
 
 .aa-dropdown-menu-inner {
   width: 100%;
