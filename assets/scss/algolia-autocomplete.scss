@@ -118,7 +118,7 @@ $border-color: #eaeaea;
 
 
 // Grid view
-#{$products} { // add .grid when JS is ready
+#{$products}.grid {
   .aa-suggestions {
     &:before, &:after { content: " "; display: table; }
     &:after { clear: both; }
