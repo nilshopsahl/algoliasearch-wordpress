@@ -17,8 +17,6 @@ so these variables help show which class is what thing */
     border-top: 1px solid #eaeaea; }
   .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion {
     padding-bottom: 0.5rem; }
-  .aa-dropdown-menu-inner > [class^="aa-dataset"] .autocomplete-header {
-    margin-left: 1rem; }
   .aa-dropdown-menu-inner > [class^="aa-dataset"] .suggestion-link {
     display: block;
     padding: 0 14px 0 0; }
@@ -43,7 +41,9 @@ so these variables help show which class is what thing */
       .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestion:last-of-type {
         border-bottom: none;
         border-bottom-left-radius: 0.25rem;
-        border-bottom-right-radius: 0.25rem; } }
+        border-bottom-right-radius: 0.25rem; }
+      .aa-dropdown-menu-inner > [class^="aa-dataset"] .autocomplete-header {
+        margin-left: 0; } }
 
 .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions {
   *zoom: 1;
@@ -82,11 +82,14 @@ so these variables help show which class is what thing */
     @media (max-width: 1029px) {
       .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion {
         height: 17rem; }
+        .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion .autocomplete-header {
+          margin-left: 1rem; }
         .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion .suggestion-post-thumbnail {
           height: 10rem;
           object-fit: contain; }
         .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion:only-child {
-          border-bottom: 0; }
+          border-bottom: 0;
+          border-top: 0; }
         .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion:first-of-type, .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion:nth-of-type(3n+4) {
           clear: left; }
         .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion:nth-of-type(2n+2) {
