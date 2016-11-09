@@ -65,7 +65,7 @@ $border-color: #eaeaea;
   border-bottom-right-radius: $table-radius;
 }
 
-.algoliasearch-grid #{$products} {
+#{$products} {
   width: 100%;
   .aa-suggestion:first-of-type {
     border-top:1px solid $border-color;
@@ -112,15 +112,15 @@ $border-color: #eaeaea;
     }
   }
 
-// Mixin to count how many elements there are, then do css
-// when these requirements are met.
-@mixin element-count( $number, $comparison: 'equal' ) { $nth: '';
-  @if index( ('greater' 'more' '>'), $comparison ) { $nth: 'n + #{$number}'; }
-  @else if index( ('less' 'fewer' '<'), $comparison ) { $nth: '-n + #{$number}'; }
-  @else if index( ('equal' 'same' '='), $comparison ) { $nth: $number; }
-  @else { @warn "Sorry, that's an invalid $comparison value." }
-  &:nth-last-child(#{$nth}):first-child { &, & ~ * { @content; } }
-}
+  // Mixin to count how many elements there are, then do css
+  // when these requirements are met.
+  @mixin element-count( $number, $comparison: 'equal' ) { $nth: '';
+    @if index( ('greater' 'more' '>'), $comparison ) { $nth: 'n + #{$number}'; }
+    @else if index( ('less' 'fewer' '<'), $comparison ) { $nth: '-n + #{$number}'; }
+    @else if index( ('equal' 'same' '='), $comparison ) { $nth: $number; }
+    @else { @warn "Sorry, that's an invalid $comparison value." }
+    &:nth-last-child(#{$nth}):first-child { &, & ~ * { @content; } }
+  }
 
 
 // Grid view
@@ -224,7 +224,7 @@ $border-color: #eaeaea;
             border-bottom: 0;
           }
         }
-      }
+      } // end of query
 
 
       // Media query for desktop
@@ -233,7 +233,7 @@ $border-color: #eaeaea;
         width: 33%;
         min-height: 16rem;
 
-        &:only-child{
+        &:only-child {
           border-bottom: 0;
         }
 
