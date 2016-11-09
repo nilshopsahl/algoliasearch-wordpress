@@ -20,6 +20,45 @@ $border-color: #eaeaea;
   }
 }
 
+//styles for toggle view button
+.-wrapper-toggle-view-buttons {
+  display: block;
+  float: right;
+}
+
+.button-list-view,
+.button-grid-view {
+  background-color: #fff;
+  width: 50%;
+  float: left;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid $border-color;
+  img.active {
+    display: none;
+  }
+  &.active {
+    background-color: #494949;
+    border-color: transparent;
+    img.not-active {
+      display: none;
+    }
+    img.active {
+      display: block;
+    }
+  }
+
+}
+
+.button-list-view {
+  border-top-left-radius: $table-radius;
+  border-bottom-left-radius: $table-radius;
+}
+
+.button-grid-view {
+  border-top-right-radius: $table-radius;
+  border-bottom-right-radius: $table-radius;
+}
+
 #{$products} {
   width: 100%;
   .aa-suggestion:first-of-type {

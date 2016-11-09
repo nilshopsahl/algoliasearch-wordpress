@@ -11,6 +11,39 @@ so these variables help show which class is what thing */
     font-size: 0.875rem;
     line-height: 140%; }
 
+.-wrapper-toggle-view-buttons {
+  display: block;
+  float: right; }
+
+.button-list-view,
+.button-grid-view {
+  background-color: #fff;
+  width: 50%;
+  float: left;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #eaeaea; }
+  .button-list-view img.active,
+  .button-grid-view img.active {
+    display: none; }
+  .button-list-view.active,
+  .button-grid-view.active {
+    background-color: #494949;
+    border-color: transparent; }
+    .button-list-view.active img.not-active,
+    .button-grid-view.active img.not-active {
+      display: none; }
+    .button-list-view.active img.active,
+    .button-grid-view.active img.active {
+      display: block; }
+
+.button-list-view {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem; }
+
+.button-grid-view {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem; }
+
 .aa-dropdown-menu-inner > [class^="aa-dataset"] {
   width: 100%; }
   .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestion:first-of-type {
