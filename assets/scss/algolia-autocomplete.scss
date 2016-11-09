@@ -62,7 +62,7 @@ $border-color: #eaeaea;
   border-bottom-right-radius: $table-radius;
 }
 
-#{$products} {
+.algoliasearch-grid #{$products} {
   width: 100%;
   .aa-suggestion:first-of-type {
     border-top:1px solid $border-color;
