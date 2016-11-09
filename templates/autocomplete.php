@@ -1,5 +1,12 @@
 <script type="text/html" id="tmpl-autocomplete-header">
 	<div class="autocomplete-header">
+		<#
+		var gridlist = "";
+		if(data.label == "Produkter") {
+			gridlist = '<div class="-wrapper-toggle-view-buttons"><div class="button-list-view active"><img class="active" src="#"><img class="not-active" src="#"></div><div class="button-grid-view"><img class="active" src="#"><img class="not-active" src="#"></div></div>';
+		}
+		#>
+		{{{ gridlist }}}
 		<div><h2 class="autocomplete-header-title">Treff på <span class="title-element">{{{ data.label }}}</span> <span class="thinner">({{{ data.hits }}})<span></h2></div>
 		<div class="clear"></div>
 	</div>
