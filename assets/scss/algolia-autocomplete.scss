@@ -24,8 +24,11 @@ $border-color: #eaeaea;
 .wrapper-toggle-view-buttons {
   display: block;
   float: right;
-  @media only screen and (min-width: 1030px) {
+  @media(min-width: 1030px) {
     max-width: 5rem;
+  }
+  @media(max-width: 1029px) {
+    margin-right: 1rem;
   }
 }
 
@@ -131,8 +134,11 @@ $border-color: #eaeaea;
     *zoom: 1;
     border: 1px solid $border-color;
     border-radius: $table-radius;
-    width: 90%;
+    width: 91%;
     margin: 0 auto;
+    @media (min-width: 1030px) {
+      width: 100%;
+    }
 
    .aa-suggestion {
       width: 50%;

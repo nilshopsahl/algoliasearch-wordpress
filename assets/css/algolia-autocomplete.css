@@ -14,9 +14,12 @@ so these variables help show which class is what thing */
 .wrapper-toggle-view-buttons {
   display: block;
   float: right; }
-  @media only screen and (min-width: 1030px) {
+  @media (min-width: 1030px) {
     .wrapper-toggle-view-buttons {
       max-width: 5rem; } }
+  @media (max-width: 1029px) {
+    .wrapper-toggle-view-buttons {
+      margin-right: 1rem; } }
 
 .button-list-view,
 .button-grid-view {
@@ -88,13 +91,16 @@ so these variables help show which class is what thing */
   *zoom: 1;
   border: 1px solid #eaeaea;
   border-radius: 0.25rem;
-  width: 90%;
+  width: 91%;
   margin: 0 auto; }
   .algoliasearch-grid .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions:before, .algoliasearch-grid .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions:after {
     content: " ";
     display: table; }
   .algoliasearch-grid .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions:after {
     clear: both; }
+  @media (min-width: 1030px) {
+    .algoliasearch-grid .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions {
+      width: 100%; } }
   .algoliasearch-grid .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion {
     width: 50%;
     float: left;
