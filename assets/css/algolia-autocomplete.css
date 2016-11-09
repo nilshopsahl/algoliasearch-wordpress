@@ -26,7 +26,7 @@ so these variables help show which class is what thing */
   background-color: #fff;
   width: 50%;
   float: left;
-  padding: 8px;
+  padding: 6px;
   border: 1px solid #eaeaea; }
   .button-list-view img.active,
   .button-grid-view img.active {
@@ -371,6 +371,10 @@ so these variables help show which class is what thing */
   width: 70px;
   height: 70px;
   border: 1px solid gainsboro; }
+  @media only screen and (min-width: 1030px) {
+    .aa-dropdown-menu .suggestion-post-thumbnail {
+      width: 100px;
+      height: 100px; } }
 
 .aa-dropdown-menu .suggestion-user-thumbnail {
   float: left;

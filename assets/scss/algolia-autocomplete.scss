@@ -37,7 +37,7 @@ $border-color: #eaeaea;
   background-color: #fff;
   width: 50%;
   float: left;
-  padding: 8px;
+  padding: 6px;
   border: 1px solid $border-color;
   img.active {
     display: none;
@@ -541,6 +541,10 @@ $border-color: #eaeaea;
   width: 70px;
   height: 70px;
   border:1px solid gainsboro;
+  @media only screen and (min-width: 1030px) {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .aa-dropdown-menu .suggestion-user-thumbnail {
