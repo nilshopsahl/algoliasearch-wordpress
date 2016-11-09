@@ -197,7 +197,7 @@
 				}
 				tether.position();
 			}
-			jQuery(window).on('resize', updateDropdownWidth);
+			//jQuery(window).on('resize', updateDropdownWidth);
 		});
 
 		/* This ensures that when the dropdown overflows the window, Thether can reposition it. */
@@ -206,12 +206,16 @@
 		jQuery(document).on("click", ".button-list-view", function() {
 			jQuery(this).toggleClass("active");
 			jQuery(".button-grid-view").toggleClass("active");
+			jQuery('.aa-dropdown-menu-inner > [class^="aa-dataset"]').toggleClass("grid");
+			jQuery("body").toggleClass("algoliasearch-grid");
+
 			 
 		});
 		jQuery(document).on("click", ".button-grid-view", function() {
 			jQuery(this).toggleClass("active");
 			jQuery(".button-list-view").toggleClass("active");
-			 
+			jQuery('.aa-dropdown-menu-inner > [class^="aa-dataset"]').toggleClass("grid");
+			jQuery("body").toggleClass("algoliasearch-grid");
 		});
 
 		jQuery(document).on("click", ".algolia-powered-by-link", function(e) {
@@ -220,11 +224,11 @@
 		});
 
 		/* Find top position of element next after header. */
-		// var p = jQuery( ".header:first" );
-		// var position = p.nextAll("div").position();
-		// jQuery(".aa-dropdown-menu").css("top",position.top);
+		var p = jQuery( ".header:first" );
+		var position = p.nextAll("div").position();
+		jQuery(".aa-dropdown-menu").css("top",position.top);
  		//console.log("bottom: " + position.top + p.nextAll("div").attr("class"));
-		//jQuery( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
+		jQuery( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
 		jQuery(".aa-dropdown-menu").each(function() {
 			jQuery(this).find("div").not(":first").wrapAll('<div class="r-wrapper"></div>');
 			});
