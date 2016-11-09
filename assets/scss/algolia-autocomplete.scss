@@ -24,6 +24,7 @@ $border-color: #eaeaea;
 .wrapper-toggle-view-buttons {
   display: block;
   float: right;
+  margin-top: -9px;
   @media(min-width: 1030px) {
     max-width: 80px;
   }

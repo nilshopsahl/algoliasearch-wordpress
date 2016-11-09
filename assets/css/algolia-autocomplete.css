@@ -13,7 +13,8 @@ so these variables help show which class is what thing */
 
 .wrapper-toggle-view-buttons {
   display: block;
-  float: right; }
+  float: right;
+  margin-top: -9px; }
   @media (min-width: 1030px) {
     .wrapper-toggle-view-buttons {
       max-width: 80px; } }
