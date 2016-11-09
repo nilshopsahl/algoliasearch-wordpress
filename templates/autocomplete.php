@@ -4,7 +4,7 @@
 		var gridlist = "";
 		var hits = 0;
 		if(data.label == "Produkter") {
-			gridlist = '<div class="wrapper-toggle-view-buttons"><div class="button-list-view active"><img class="active" src="/wp-content/plugins/algoliasearch-wordpress/assets/img/list-icon-active.svg"><img class="not-active" src="/wp-content/plugins/algoliasearch-wordpress/assets/img/list-icon-not-active.svg"></div><div class="button-grid-view"><img class="active" src="/wp-content/plugins/algoliasearch-wordpress/assets/img/grid-icon-active.svg"><img class="not-active" src="/wp-content/plugins/algoliasearch-wordpress/assets/img/grid-icon-not-active.svg"></div></div>';
+			gridlist = '<div class="wrapper-toggle-view-buttons"><div class="button-list-view active"><img class="active" src="/wp-content/plugins/algolia/assets/img/list-icon-active.svg"><img class="not-active" src="/wp-content/plugins/algolia/assets/img/list-icon-not-active.svg"></div><div class="button-grid-view"><img class="active" src="/wp-content/plugins/algolia/assets/img/grid-icon-active.svg"><img class="not-active" src="/wp-content/plugins/algolia/assets/img/grid-icon-not-active.svg"></div></div>';
 		}
 		#>
 		{{{ gridlist }}}
@@ -197,7 +197,7 @@
 				}
 				tether.position();
 			}
-			//jQuery(window).on('resize', updateDropdownWidth);
+			jQuery(window).on('resize', updateDropdownWidth);
 		});
 
 		/* This ensures that when the dropdown overflows the window, Thether can reposition it. */
