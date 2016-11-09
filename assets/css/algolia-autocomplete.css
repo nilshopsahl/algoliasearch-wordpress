@@ -16,7 +16,7 @@ so these variables help show which class is what thing */
   float: right; }
   @media (min-width: 1030px) {
     .wrapper-toggle-view-buttons {
-      max-width: 5rem; } }
+      max-width: 80px; } }
   @media (max-width: 1029px) {
     .wrapper-toggle-view-buttons {
       margin-right: 1rem; } }
@@ -26,7 +26,7 @@ so these variables help show which class is what thing */
   background-color: #fff;
   width: 50%;
   float: left;
-  padding: 0.5rem;
+  padding: 8px;
   border: 1px solid #eaeaea; }
   .button-list-view img.active,
   .button-grid-view img.active {
