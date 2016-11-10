@@ -23,7 +23,7 @@
 
 			<#
 			//console.log(data);
-		
+
 			var attributes = ['content', 'title6', 'title5', 'title4', 'title3', 'title2', 'title1'];
 			var attribute_name;
 			var relevant_content = '';
@@ -209,7 +209,7 @@
 			jQuery('.aa-dropdown-menu-inner > [class^="aa-dataset"]').toggleClass("grid");
 			jQuery("body").toggleClass("algoliasearch-grid");
 
-			 
+
 		});
 		jQuery(document).on("click", ".button-grid-view", function() {
 			jQuery(this).toggleClass("active");

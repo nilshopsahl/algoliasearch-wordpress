@@ -33,6 +33,7 @@ $border-color: #eaeaea;
   }
 }
 
+//styles for toggle view button
 .button-list-view,
 .button-grid-view {
   background-color: #fff;
@@ -56,17 +57,28 @@ $border-color: #eaeaea;
       display: block;
     }
   }
-
 }
 
+//styles for toggle view button
 .button-list-view {
   border-top-left-radius: $table-radius;
   border-bottom-left-radius: $table-radius;
 }
 
+//styles for toggle view button
 .button-grid-view {
   border-top-right-radius: $table-radius;
   border-bottom-right-radius: $table-radius;
+}
+
+// Se flere produkter-knapp on products
+.button-more-products {
+  background-color: #494949;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  color: #fff !important;
+  font-weight: bold !important;
+  margin: 1rem 1rem 1rem 0;
 }
 
 #{$products} {
@@ -360,6 +372,10 @@ $border-color: #eaeaea;
       display: inline-block;
       border: none;
       padding: 0;
+    }
+    // Se flere produkter-knapp on tags
+    .button-more-products {
+      float: left;
     }
     // Media query for desktop
     @media only screen and (min-width: 1030px) {
@@ -658,5 +674,3 @@ body .thinner {
       margin-left: 0;
     }
   }
-
-

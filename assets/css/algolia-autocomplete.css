@@ -54,6 +54,17 @@ so these variables help show which class is what thing */
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem; }
 
+.button-more-products {
+  background-color: #494949;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  color: #fff !important;
+  font-weight: bold !important;
+  margin: 1rem 1rem 1rem 0; }
+
+.button-more-products {
+  float: left; }
+
 .aa-dropdown-menu-inner > [class^="aa-dataset"] {
   width: 100%; }
   .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestion:first-of-type {
