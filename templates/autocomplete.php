@@ -152,8 +152,9 @@
 			var config = {
 				element: $menu,
 				target: this,
-				attachment: 'top left',
+				attachment: 'top',
 				targetAttachment: 'bottom left',
+				offset: '-25px 0px',
 				constraints: [
 					{
 						to: 'window',
@@ -176,10 +177,10 @@
 				}
 			});
 			$searchInput.on('autocomplete:updated', function() {
-				//tether.position();
+				tether.position();
 			});
 			$searchInput.on('autocomplete:opened', function() {
-				//updateDropdownWidth();
+				updateDropdownWidth();
 			});
 
 
@@ -234,6 +235,7 @@
 			});
 
 		/* Make dropdown-menu an overlay */
+		//jQuery( ".aa-dropdown-menu" ).css( "transform","translateY(" + position.top + "px) !important" );
 		jQuery( ".aa-dropdown-menu" ).wrapInner( "<div class='aa-dropdown-menu-inner'></div>" );
 	});
 </script>
