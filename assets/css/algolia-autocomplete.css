@@ -62,9 +62,6 @@ so these variables help show which class is what thing */
   font-weight: bold !important;
   margin: 1rem 1rem 1rem 0; }
 
-.button-more-products {
-  float: left; }
-
 .aa-dropdown-menu-inner > [class^="aa-dataset"] {
   width: 100%; }
   .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestion:first-of-type {
@@ -234,6 +231,8 @@ so these variables help show which class is what thing */
     display: inline-block;
     border: none;
     padding: 0; }
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .button-more-products {
+    float: left; }
   @media only screen and (min-width: 1030px) {
     .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] {
       width: 100%;
@@ -245,7 +244,8 @@ so these variables help show which class is what thing */
     padding: 0.25rem 0.5rem;
     display: block; }
   .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .wrapper-suggestion-link {
-    padding: 0.15rem 0.5rem 0.25rem 0.5rem; }
+    padding: 0.15rem 0.5rem 0.25rem 0.5rem;
+    margin-bottom: 0.75rem; }
 
 .title-element {
   text-transform: lowercase; }
