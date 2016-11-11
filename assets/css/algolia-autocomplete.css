@@ -233,9 +233,14 @@ so these variables help show which class is what thing */
   .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .aa-suggestions .aa-suggestion {
     display: inline-block;
     border: none;
-    padding: 0; }
-  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .button-more-products {
+    padding: 0;
     float: left; }
+  .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] .button-more-products {
+    float: left;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 140%;
+    margin-top: 0; }
   @media only screen and (min-width: 1030px) {
     .aa-dropdown-menu-inner > .r-wrapper > [class^="aa-dataset"] ~ [class^="aa-dataset"] {
       width: 100%;
@@ -478,7 +483,7 @@ body .thinner {
     margin: 0 1rem 1rem 1rem; } }
 /* Media query for desktop */
 @media only screen and (min-width: 1030px) {
-  .aa-suggestions {
+  .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions {
     width: 100%;
     float: left; }
 
