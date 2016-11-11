@@ -168,7 +168,7 @@ so these variables help show which class is what thing */
     @media (min-width: 1030px) {
       .algoliasearch-grid .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion {
         width: 33%;
-        min-height: 16rem;
+        min-height: 17rem;
         /* ELEMENT COUNTING FOR SORTING OUT BORDERS */ }
         .algoliasearch-grid .aa-dropdown-menu-inner > [class^="aa-dataset"] .aa-suggestions .aa-suggestion:only-child {
           border-bottom: 0; }
