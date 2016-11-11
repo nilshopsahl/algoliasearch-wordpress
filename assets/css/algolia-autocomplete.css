@@ -282,7 +282,16 @@ so these variables help show which class is what thing */
   background-color: #fff;
   overflow-x: hidden;
   /* Disable horizontal scroll */
-  transform: translateY(181px) translateX(0) !important; }
+  transform: translateY(109px) translateX(0) !important; }
+  @media only screen and (min-width: 768px) {
+    .aa-dropdown-menu {
+      transform: translateY(117px) translateX(0) !important; } }
+  @media only screen and (min-width: 1026px) {
+    .aa-dropdown-menu {
+      transform: translateY(173px) translateX(0) !important; } }
+  @media only screen and (min-width: 1046px) {
+    .aa-dropdown-menu {
+      transform: translateY(152px) translateX(0) !important; } }
 
 .aa-dropdown-menu-inner {
   width: 100%;
