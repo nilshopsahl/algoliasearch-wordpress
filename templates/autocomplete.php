@@ -1,14 +1,19 @@
 <script type="text/html" id="tmpl-autocomplete-header">
-	<div class="autocomplete-header">
+	<# 
+		var typeClass = "tag";
+		if(data.label == "Produkter") {
+			var typeClass = "product";
+		}
+	#>
+	<div class="autocomplete-header {{{ typeClass }}}">
 		<#
 		var gridlist = "";
-		var hits = 0;
 		if(data.label == "Produkter") {
 			gridlist = '<div class="wrapper-toggle-view-buttons"><div class="button-list-view active"><img class="active" src="/wp-content/plugins/algolia/assets/img/list-icon-active.svg"><img class="not-active" src="/wp-content/plugins/algolia/assets/img/list-icon-not-active.svg"></div><div class="button-grid-view"><img class="active" src="/wp-content/plugins/algolia/assets/img/grid-icon-active.svg"><img class="not-active" src="/wp-content/plugins/algolia/assets/img/grid-icon-not-active.svg"></div></div>';
 		}
 		#>
 		{{{ gridlist }}}
-		<div><h2 class="autocomplete-header-title">Treff på <span class="title-element">{{{ data.label }}}</span> <span class="thinner">({{{ data.hits }}})<span></h2></div>
+		<div><h2 class="autocomplete-header-title">Treff på <span class="title-element">{{{ data.label }}}</span> <span class="thinner">dd<span></h2></div>
 		<div class="clear"></div>
 	</div>
 </script>
@@ -22,7 +27,6 @@
 			<h2 class="suggestion-post-title suggestion-product-title">{{{ data._highlightResult.post_title.value }}}</h2>
 
 			<#
-			//console.log(data);
 
 			var attributes = ['content', 'title6', 'title5', 'title4', 'title3', 'title2', 'title1'];
 			var attribute_name;
@@ -46,6 +50,20 @@
 		</div>
 	</a>
 </script>
+
+<script type="text/html" id="tmpl-autocomplete-more">
+	<div class="autocomplete-more">****
+		<#
+		var gridlist = "";
+		if(data.label == "Produkter") {
+			gridlist = '<div class="wrapper-toggle-view-buttons"><div class="button-list-view active"><img class="active" src="/wp-content/plugins/algolia/assets/img/list-icon-active.svg"><img class="not-active" src="/wp-content/plugins/algolia/assets/img/list-icon-not-active.svg"></div><div class="button-grid-view"><img class="active" src="/wp-content/plugins/algolia/assets/img/grid-icon-active.svg"><img class="not-active" src="/wp-content/plugins/algolia/assets/img/grid-icon-not-active.svg"></div></div>';
+		}
+		#>
+		{{{ gridlist }}}
+		<div class="clear"></div>
+	</div>
+</script>
+
 
 <script type="text/html" id="tmpl-autocomplete-term-suggestion">
 	<div class="wrapper-suggestion-link">
@@ -95,7 +113,7 @@
 		jQuery.each(algolia.autocomplete.sources, function(i, config) {
 			sources.push({
 				source: autocomplete.sources.hits(client.initIndex(config['index_name']), {
-					hitsPerPage: config['max_suggestions'],
+					hitsPerPage: 3,
 					attributesToSnippet: [
 						'content:10',
 						'title1:10',
@@ -109,18 +127,23 @@
 				templates: {
 					header: function() {
 						return wp.template('autocomplete-header')({
-							label: config['label']
+							label: config['label'],
+							no: i
 						});
 					},
-					suggestion: wp.template(config['tmpl_suggestion'])
+					suggestion: wp.template(config['tmpl_suggestion']),
+					more: wp.template(config['tmpl_more'])
 				}
 			});
+
+
 
 		});
 
 		/* Setup dropdown menus */
 		jQuery("input[name='s']:not('.no-autocomplete')").each(function(i) {
 			var $searchInput = jQuery(this);
+
 
 			var config = {
 				debug: algolia.debug,
@@ -133,6 +156,8 @@
 			if(algolia.powered_by_enabled) {
 				//config.templates.footer = wp.template('autocomplete-footer');
 			}
+
+			//config.templates.more = wp.template('autocomplete-more');
 
 			/* Instantiate autocomplete.js */
 			autocomplete($searchInput[0], config, sources)
@@ -199,6 +224,7 @@
 				tether.position();
 			}
 			jQuery(window).on('resize', updateDropdownWidth);
+
 		});
 
 		/* This ensures that when the dropdown overflows the window, Thether can reposition it. */
@@ -232,6 +258,12 @@
 		jQuery( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
 		jQuery(".aa-dropdown-menu").each(function() {
 			jQuery(this).find("div").not(":first").wrapAll('<div class="r-wrapper"></div>');
+			});
+
+		// Find the more button on change of dropdown
+
+			jQuery(".aa-dataset-0").on( 'rendered', function() {
+				jQuery(".algoli-more").html('<a class="button-more-products" href="#">Se flere produkter &#187;</a>');
 			});
 
 		/* Make dropdown-menu an overlay */

@@ -3329,8 +3329,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    var that = this;
 
+
 	    var hasSuggestions;
 	    var renderArgs = [].slice.call(arguments, 2);
+	    var typeElement;
 	    this.$el.empty();
 
 	    hasSuggestions = suggestions && suggestions.length;
@@ -3346,6 +3348,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	        .html(getSuggestionsHtml.apply(this, renderArgs))
 	        .prepend(that.templates.header ? getHeaderHtml.apply(this, renderArgs) : null)
 	        .append(that.templates.footer ? getFooterHtml.apply(this, renderArgs) : null);
+	        //console.log(renderArgs[0].nbHits);
+
+
+
+	       
+	        typeElement = this.$el.find(".suggestion-post-attributes").attr("class");
+	        if(typeElement) {
+		        this.$el.append('<a class="button-more-products" href="#">Se flere produkter &#187;</a>');
+	        } else {
+		        this.$el.append('<a class="button-more-products" href="#">Se flere &#187;</a>');
+	        }
+
+
+
 	    }
 
 	    if (this.$menu) {
@@ -3353,6 +3369,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        .removeClass(this.cssClasses.prefix + '-' + (hasSuggestions ? 'without' : 'with') + '-' + this.name);
 	    }
 
+	    this.$el.trigger('rendered', query);
 	    this.trigger('rendered', query);
 
 	    function getEmptyHtml() {
