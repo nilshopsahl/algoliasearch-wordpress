@@ -433,19 +433,19 @@ $border-color: #eaeaea;
     background-color: #fff;
     overflow-x: hidden; /* Disable horizontal scroll */
     // transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-
     // transform: translateY(181px) translateX(0) !important; commenting this out for now
+
     transform: translateY(109px) translateX(0) !important;
     //tablet query
     @media only screen and (min-width: 768px) {
       transform: translateY(117px) translateX(0) !important;
     }
-    // this query is here becouse of elements jumping up in the header,
+    // this query is here becouse of elements jumping up and down in the soma header,
     // it needs to be customized if it this plugin is going to be used in another theme
     @media only screen and (min-width: 1026px) {
       transform: translateY(173px) translateX(0) !important;
     }
-    // this query is here becouse of elements jumping up in the header,
+    // this query is here becouse of elements jumping up and down in the soma header,
     // it needs to be customized if it this plugin is going to be used in another theme
     @media only screen and (min-width: 1046px) {
       transform: translateY(152px) translateX(0) !important;
