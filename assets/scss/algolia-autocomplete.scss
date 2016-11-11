@@ -102,6 +102,10 @@ $border-color: #eaeaea;
     font-size: 1.0625rem;
   }
 
+  .button-more-products {
+    text-align: center !important;
+  }
+
     // Media query for desktop
     @media only screen and (min-width: 1030px) {
       width: 50%;
@@ -690,7 +694,6 @@ body .thinner {
 @media only screen and (min-width: 1030px) {
   #{$products} .aa-suggestions {
     width: 100%;
-    float: left;
   }
     // this wrapper contains posts and tags
     .r-wrapper {
