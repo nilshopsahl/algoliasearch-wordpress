@@ -772,10 +772,10 @@ body .thinner {
 
 @media only screen and (max-width: 1029px) {
   .fadedBottom .button-more-products {
-      position: absolute !important;
-      z-index: 10 !important;
-      bottom: 1.5em !important;
-      left: 10% !important;
-      width: 80% !important;
+      position: absolute;
+      z-index: 10;
+      bottom: 1.5em;
+      left: 10%;
+      width: 80%;
   }
 }
