@@ -510,7 +510,8 @@ body .thinner {
 .panel.borders {
   border-top: 2px solid #ddd;
   border-bottom: 2px solid #ddd;
-  padding: 120px 0; }
+  padding: 120px 0;
+  min-height: 160px; }
 .panel.search {
   text-align: center;
   background: url("../img/glyph-search-header.png") no-repeat center center;
@@ -541,9 +542,8 @@ body .thinner {
   bottom: 1.5em;
   left: 25%;
   width: 50%; }
-
 @media only screen and (max-width: 1029px) {
-  .fadedBottom .button-more-products {
+  .fadedBottom {
     position: absolute;
     z-index: 10;
     bottom: 1.5em;

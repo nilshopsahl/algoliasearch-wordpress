@@ -2,9 +2,9 @@
     <#
     var typeClass = "tag";
     if(data.label == "Produkter") {
-    var typeClass = "product";
-}
-#>
+        var typeClass = "product";
+    }
+    #>
 <div class="autocomplete-header {{{ typeClass }}}">
 
     <#
@@ -22,7 +22,7 @@
     }
 #>
 {{{ gridlist }}}
-<div><h2 class="autocomplete-header-title" data-more-url="{{{ data.moreUrl }}}"><?php esc_html_e( 'Results for', 'driv_algolia' ); ?> <span class="title-element">{{{ data.label }}}</span> <span class="thinner">{{{ data.count }}}<span></h2></div>
+<div><h2 class="autocomplete-header-title {{{ typeClass }}}" data-more-url="{{{ data.moreUrl }}}"><?php esc_html_e( 'Results for', 'driv_algolia' ); ?> <span class="title-element">{{{ data.label }}}</span> <span class="thinner">{{{ data.count }}}<span></h2></div>
 <div class="clear"></div>
 </div>
 </script>

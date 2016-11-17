@@ -3343,20 +3343,20 @@ return /******/ (function(modules) { // webpackBootstrap
             .html(getEmptyHtml.apply(this, renderArgs))
             .prepend(that.templates.header ? getHeaderHtml.apply(this, renderArgs) : null)
             .append(that.templates.footer ? getFooterHtml.apply(this, renderArgs) : null);
+
+          this.$el.removeClass('fadedBottom');
+
         } else if (hasSuggestions) {
           this.$el
             .html(getSuggestionsHtml.apply(this, renderArgs))
             .prepend(that.templates.header ? getHeaderHtml.apply(this, renderArgs) : null)
             .append(that.templates.footer ? getFooterHtml.apply(this, renderArgs) : null);
-            //console.log(renderArgs[0].nbHits);
-
-
 
 
             typeElement = this.$el.find(".suggestion-post-attributes").attr("class");
             if (renderArgs[0].nbHits > renderArgs[0].hitsPerPage) {
                 url = this.$el.closest('div').find('.autocomplete-header-title').attr('data-more-url');
-                if(typeElement) {
+                if(typeof renderArgs[0].hits[0].post_type !== 'undefined' && renderArgs[0].hits[0].post_type == 'product') {
                     this.$el.addClass('fadedBottom');
                     this.$el.append('<a class="button-more-products" href="' + url + '">Se flere produkter &#187;</a>');
                 } else {
@@ -3365,7 +3365,6 @@ return /******/ (function(modules) { // webpackBootstrap
             } else {
                 this.$el.removeClass('fadedBottom');
             }
-
 
 
         }

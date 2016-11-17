@@ -33,6 +33,15 @@ module.exports = function(grunt) {
       }
     },
 
+    // Minify JS
+    uglify: {
+      my_target: {
+        files: {
+          'assets/js/autocomplete.js/autocomplete.min.js': ['assets/js/autocomplete.js/autocomplete.js']
+        }
+      }
+    },
+
     // Watch for any changes
     watch: {
       // js: {
@@ -40,8 +49,8 @@ module.exports = function(grunt) {
       // },
       css: {
         // Watch sass changes, merge mqs & run bs
-        files: ['assets/scss/*.scss', 'assets/scss/**/*.scss'],
-        tasks: ['sass', 'postcss:dist' ]
+        files: ['assets/scss/*.scss', 'assets/scss/**/*.scss', 'assets/js/autocomplete.js/autocomplete.js'],
+        tasks: ['sass', 'postcss:dist', 'uglify' ]
       },
     }
   });
@@ -50,6 +59,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'sass',         // Run sass
     'postcss:dist', // Post Process with Auto-Prefix
+    'uglify',       // Minify JS
     'watch'         // Keep watching for any changes
   ]);
 };

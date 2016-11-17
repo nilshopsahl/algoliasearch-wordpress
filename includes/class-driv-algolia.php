@@ -19,7 +19,7 @@ class drivAlgolia {
       // Load textdomain
       $languages_dir =  plugin_basename( dirname( __FILE__ ) ) . '/assets/languages/';
       load_textdomain( self::$textdomain, $languages_dir . self::$textdomain . '-' . $locale . '.mo' );
-      load_plugin_textdomain( self::$textdomain, false, plugin_basename( dirname( __FILE__ ) ) . '/assets/languages' );
+      load_plugin_textdomain( self::$textdomain, false, dirname(plugin_basename( dirname( __FILE__ ) ) ) . '/assets/languages' );
     }
 
     public static function get_current_settings($indices=null)

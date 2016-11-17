@@ -716,6 +716,7 @@ body .thinner {
         border-top: 2px solid #ddd;
         border-bottom: 2px solid #ddd;
         padding: 120px 0;
+        min-height: 160px;
     }
     &.search {
         text-align: center;
@@ -734,48 +735,45 @@ body .thinner {
     position: relative;
 }
 .fadedBottom {
-    &:after {
-        position: absolute;
-        z-index: 5;
-        bottom: 0em;
-        width:100%;
-        height: 8em;
-        background: -webkit-linear-gradient(
-            rgba(255, 255, 255, .25) 25%,
-            rgba(255, 255, 255, 1) 100%
-        );
-        background-image: -moz-linear-gradient(
-            rgba(255, 255, 255, .25) 25%,
-            rgba(255, 255, 255, 1) 100%
-        );
-        background-image: -o-linear-gradient(
-            rgba(255, 255, 255, .25) 25%,
-            rgba(255, 255, 255, 1) 100%
-        );
-        background-image: linear-gradient(
-            rgba(255, 255, 255, .25) 25%,
-            rgba(255, 255, 255, 1) 100%
-        );
-        background-image: -ms-linear-gradient(
-            rgba(255, 255, 255, .25) 25%,
-            rgba(255, 255, 255, 1) 100%
-        );
-    }
-    .button-more-products {
-        position: absolute;
-        z-index: 10;
-        bottom: 1.5em;
-        left: 25%;
-        width: 50%
-    }
-}
-
-@media only screen and (max-width: 1029px) {
-  .fadedBottom .button-more-products {
+  &:after {
+      position: absolute;
+      z-index: 5;
+      bottom: 0em;
+      width:100%;
+      height: 8em;
+      background: -webkit-linear-gradient(
+          rgba(255, 255, 255, .25) 25%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: -moz-linear-gradient(
+          rgba(255, 255, 255, .25) 25%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: -o-linear-gradient(
+          rgba(255, 255, 255, .25) 25%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: linear-gradient(
+          rgba(255, 255, 255, .25) 25%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: -ms-linear-gradient(
+          rgba(255, 255, 255, .25) 25%,
+          rgba(255, 255, 255, 1) 100%
+      );
+  }
+  .button-more-products {
       position: absolute;
       z-index: 10;
       bottom: 1.5em;
-      left: 10%;
-      width: 80%;
+      left: 25%;
+      width: 50%
+  }
+  @media only screen and (max-width: 1029px) {
+    position: absolute;
+    z-index: 10;
+    bottom: 1.5em;
+    left: 10%;
+    width: 80%;
   }
 }
