@@ -28,7 +28,7 @@
 </script>
 
 <script type="text/html" id="tmpl-autocomplete-post-suggestion">
-    <a class="suggestion-link" href="{{ data.permalink }}" title="{{ data.post_title }}">
+    <a class="suggestion-link {{{ data.post_type }}}" href="{{ data.permalink }}" title="{{ data.post_title }}">
         <# if ( data.images.thumbnail ) { #>
         <img class="suggestion-post-thumbnail" src="{{ data.images.thumbnail.url }}" alt="{{ data.post_title }}">
         <# } #>
@@ -41,22 +41,22 @@
             var relevant_content = '';
             var price_content = '';
             for ( var index in attributes ) {
-            attribute_name = attributes[ index ];
-            if ( data._highlightResult[ attribute_name ].matchedWords.length > 0 ) {
-            relevant_content = data._snippetResult[ attribute_name ].value;
-            break;
-        } else if( data._snippetResult[ attribute_name ].value !== '' ) {
-        relevant_content = data._snippetResult[ attribute_name ].value;
-    }
-}
-if(data.post_type == "product") {
-price_content = '<p class="suggestion-post-price">' + data.price2 + '</p>';
-}
-#>
-<p class="suggestion-post-content">{{{ relevant_content }}}</p>
-{{{ price_content }}}
-</div>
-</a>
+                attribute_name = attributes[ index ];
+                if ( data._highlightResult[ attribute_name ].matchedWords.length > 0 ) {
+                    relevant_content = data._snippetResult[ attribute_name ].value;
+                    break;
+                } else if( data._snippetResult[ attribute_name ].value !== '' ) {
+                    relevant_content = data._snippetResult[ attribute_name ].value;
+                    }
+                }
+                if(data.post_type == "product") {
+                price_content = '<p class="suggestion-post-price">' + data.price2 + '</p>';
+            }
+            #>
+            <p class="suggestion-post-content">{{{ relevant_content }}}</p>
+            {{{ price_content }}}
+        </div>
+    </a>
 </script>
 
 <script type="text/html" id="tmpl-autocomplete-more">
@@ -74,7 +74,7 @@ price_content = '<p class="suggestion-post-price">' + data.price2 + '</p>';
 
 
 <script type="text/html" id="tmpl-autocomplete-term-suggestion">
-    <div class="wrapper-suggestion-link">
+    <div class="wrapper-suggestion-link {{{ data.taxonomy }}} term">
         <a class="suggestion-link" href="{{ data.permalink }}"  title="{{ data.name }}">
             <p class="suggestion-post-title suggestion-tag-title">{{{ data._highlightResult.name.value }}}</p>
         </a>
@@ -162,16 +162,19 @@ price_content = '<p class="suggestion-post-price">' + data.price2 + '</p>';
                             label: config['label'],
                             count: args.nbHits,
                             moreUrl: moreUrl,
-                            //view: drivAlgoliaSettings[indexName].view,
                             view: view,
                             wrapperClass: '.aa-dataset-' + i,
                         });
                     },
                     suggestion: wp.template(config['tmpl_suggestion']),
+                    // suggestion: function(query, args) {
+                    //     return wp.template(config['tmpl_suggestion'])({
+                    //         class: config['index_id'],
+                    //     });
+                    // },
                     more: wp.template(config['tmpl_more']),
                     empty: function(query, args) {
-                        indexName = config['index_name'].replace('wp_', '');
-                        if (drivAlgoliaSettings[indexName].empty_view!=='product') return;
+                        if (drivAlgoliaSettings[config['index_id']].empty_view!=='product') return;
                         return wp.template('autocomplete-empty-product')({
                             query: args.query,
                         });
