@@ -26,29 +26,29 @@
 				<input type="number" name="algolia_autocomplete_config[<?php echo esc_attr( $index['index_id'] ); ?>][position]"  value="<?php echo (int) $index['position']; ?>" />
 			</td>
 			<td>
-				<?php if ($index['index_id'] == 'posts_product') { ?>
-                    <select name="driv_algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][view]" style="display: block; width: 100%;">
-                        <?php foreach (['list'=> __('List', 'driv_algolia'), 'grid'=> __('Grid', 'driv_algolia')] as $value => $label) { ?>
-                            <option value="<?php echo $value; ?>"<?php if ($value==$settings[$index['index_id']]['view']) { echo ' selected="selected"'; } ?>><?php echo $label; ?></option>
-                        <?php } ?>
-                    </select>
-                <?php } else { ?>
-                    <input type="hidden" name="driv_algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][view]" value="list" />
-                <?php } ?>
-            </td>
-            <td>
-                <select name="driv_algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][empty_view]" value="<?php echo $settings[$index['index_id']]['empty_view']; ?>" style="display: block; width: 100%;">
-                    <?php foreach (['none'=> __('None', 'driv_algolia'), 'product'=> __('No Products Found', 'driv_algolia')] as $value => $label) { ?>
-                        <option value="<?php echo $value; ?>"<?php if ($value==$settings[$index['index_id']]['empty_view']) { echo ' selected="selected"'; } ?>><?php echo $label; ?></option>
-                    <?php } ?>
-                </select>
-            </td>
-		</tr>
+      <?php if ( 'posts_product' === $index['index_id'] ) { ?>
+        <select name="algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][view]" style="display: block; width: 100%;">
+          <?php foreach ( [ 'list' => __( 'List', 'algolia' ), 'grid' => __( 'Grid', 'algolia' ) ] as $value => $label ) { ?>
+            <option value="<?php echo $value; ?>"<?php if ( $value === $settings[ $index['index_id'] ]['view'] ) { echo ' selected="selected"'; } ?>><?php echo $label; ?></option>
+          <?php } ?>
+        </select>
+      <?php } else { ?>
+        <input type="hidden" name="algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][view]" value="list" />
+      <?php } ?>
+      </td>
+      <td>
+        <select name="algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][empty_view]" value="<?php echo $settings[ $index['index_id'] ]['empty_view']; ?>" style="display: block; width: 100%;">
+          <?php foreach ( [ 'none' => __( 'None', 'algolia' ), 'product' => __( 'No Products Found', 'algolia' ) ] as $value => $label ) { ?>
+            <option value="<?php echo $value; ?>"<?php if ( $value == $settings[ $index['index_id'] ]['empty_view'] ) { echo ' selected="selected"'; } ?>><?php echo $label; ?></option>
+          <?php } ?>
+        </select>
+      </td>
+    </tr>
 		<?php endforeach; ?>
 		<?php if ( empty( $indices ) ) : ?>
 			<tr>
 				<td colspan="4" class="column-comments">
-					<em>You have no indexed content yet.</em>
+					<em><?php _e( 'You have no indexed content yet.', 'algolia' ); ?></em>
 				</td>
 			</tr>
 		<?php endif; ?>
