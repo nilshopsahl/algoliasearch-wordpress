@@ -27,17 +27,17 @@
 			</td>
 			<td>
       <?php if ( 'posts_product' === $index['index_id'] ) { ?>
-        <select name="algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][view]" style="display: block; width: 100%;">
+        <select name="driv_algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][view]" style="display: block; width: 100%;">
           <?php foreach ( [ 'list' => __( 'List', 'algolia' ), 'grid' => __( 'Grid', 'algolia' ) ] as $value => $label ) { ?>
             <option value="<?php echo $value; ?>"<?php if ( $value === $settings[ $index['index_id'] ]['view'] ) { echo ' selected="selected"'; } ?>><?php echo $label; ?></option>
           <?php } ?>
         </select>
       <?php } else { ?>
-        <input type="hidden" name="algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][view]" value="list" />
+        <input type="hidden" name="driv_algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][view]" value="list" />
       <?php } ?>
       </td>
       <td>
-        <select name="algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][empty_view]" value="<?php echo $settings[ $index['index_id'] ]['empty_view']; ?>" style="display: block; width: 100%;">
+        <select name="driv_algolia_settings[<?php echo esc_attr( $index['index_id'] ); ?>][empty_view]" value="<?php echo $settings[ $index['index_id'] ]['empty_view']; ?>" style="display: block; width: 100%;">
           <?php foreach ( [ 'none' => __( 'None', 'algolia' ), 'product' => __( 'No Products Found', 'algolia' ) ] as $value => $label ) { ?>
             <option value="<?php echo $value; ?>"<?php if ( $value == $settings[ $index['index_id'] ]['empty_view'] ) { echo ' selected="selected"'; } ?>><?php echo $label; ?></option>
           <?php } ?>

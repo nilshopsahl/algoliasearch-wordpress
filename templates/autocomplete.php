@@ -153,23 +153,17 @@
                 }),
                 templates: {
                     header: function(query, args) {
-                        // Remove the prefix from the index name
-                        indexName = config['index_name'].replace( '<?php echo get_option( 'algolia_index_name_prefix', 'wp_' ); ?>', '' );
-                        // Get the type ID and remove posts and terms
+                        indexName = config['index_id'];
                         type = config['index_id'].replace('posts_', '').replace('terms_', '');
-                        // If we get nothing back, stop.
-                        if ( args.nbHits==0 && 'product' !== drivAlgoliaSettings[indexName].empty_view ) return;
-                        // Get the more URL
+                        if (args.nbHits==0 && drivAlgoliaSettings[indexName].empty_view!=='product') return;
                         moreUrl = (parseInt(args.nbHits) > parseInt(args.hitsPerPage)) ? '/?s=' + query.query + '&type=' + type : false;
-                        // Get the default view
                         view = (indexName=='posts_product') ? defaultAlgoliaView : drivAlgoliaSettings[indexName].view;
-                        // Reutn the template
                         return wp.template('autocomplete-header')({
                             label: config['label'],
                             count: args.nbHits,
                             moreUrl: moreUrl,
                             view: view,
-                            wrapperClass: '.aa-dataset-' + i,
+                            wrapperClass: '.aa-dataset-' a+ i,
                         });
                     },
                     suggestion: wp.template(config['tmpl_suggestion']),
