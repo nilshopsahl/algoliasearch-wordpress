@@ -182,7 +182,7 @@
                     // },
                     more: wp.template(config['tmpl_more']),
                     empty: function(query, args) {
-                        if (typeof drivAlgoliaSettings[config['index_id']] !== 'undefined' || drivAlgoliaSettings[config['index_id']].empty_view!=='product') return;
+                        if (typeof drivAlgoliaSettings[config['index_id']] === 'undefined' || drivAlgoliaSettings[config['index_id']].empty_view!=='product') return;
                         return wp.template('autocomplete-empty-product')({
                             query: args.query,
                         });
