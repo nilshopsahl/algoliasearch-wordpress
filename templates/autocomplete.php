@@ -171,15 +171,6 @@
                         });
                     },
                     suggestion: wp.template(config['tmpl_suggestion']),
-                    // suggestion: function(query, args) {
-                    //     templateName = getDefaultAlgoliaSuggestionTemplateName(args);
-                    //     return wp.template(templateName)({
-                    //         class: config['index_id'],
-                    //         wrapperClass: '.aa-dataset-' + i,
-                    //         //config: config,
-                    //         //args: args,
-                    //     });
-                    // },
                     more: wp.template(config['tmpl_more']),
                     empty: function(query, args) {
                         if (typeof drivAlgoliaSettings[config['index_id']] === 'undefined' || drivAlgoliaSettings[config['index_id']].empty_view!=='product') return;
@@ -189,19 +180,6 @@
                     },
                 }
             });
-        });
-
-        var algoliaIndexSourceKey;
-
-        jQuery(document)
-        .on('click', '.button-more-products', function() { 
-            algoliaIndexSourceKey = jQuery(this).attr('data-algolia-source-key');
-            jQuery.each(algolia.autocomplete.sources, function(i, config) {
-                if (algoliaIndexSourceKey==i) {
-                    algolia.autocomplete.sources[i].max_suggestions = 999;
-                }
-            });
-            jQuery('.aa-input').trigger('keypress');
         });
 
         /* Setup dropdown menus */
