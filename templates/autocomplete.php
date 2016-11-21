@@ -163,7 +163,7 @@
                             count: args.nbHits,
                             moreUrl: moreUrl,
                             view: view,
-                            wrapperClass: '.aa-dataset-' a+ i,
+                            wrapperClass: '.aa-dataset-' + i,
                         });
                     },
                     suggestion: wp.template(config['tmpl_suggestion']),
