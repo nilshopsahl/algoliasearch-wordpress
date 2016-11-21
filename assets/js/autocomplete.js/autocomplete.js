@@ -3333,6 +3333,7 @@ return /******/ (function(modules) { // webpackBootstrap
         var hasSuggestions;
         var renderArgs = [].slice.call(arguments, 2);
         var typeElement;
+        var moreUrl;
         this.$el.empty();
 
         hasSuggestions = suggestions && suggestions.length;
@@ -3354,13 +3355,22 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
             typeElement = this.$el.find(".suggestion-post-attributes").attr("class");
+            if (typeof renderArgs[0].hits[0].taxonomy !== 'undefined') {
+              this.$el.closest('div').addClass(renderArgs[0].hits[0].taxonomy);
+            } else if (typeof renderArgs[0].hits[0].product_type !== 'undefined') {
+              this.$el.closest('div').addClass(renderArgs[0].hits[0].product_type);
+            }
             if (renderArgs[0].nbHits > renderArgs[0].hitsPerPage) {
-                url = this.$el.closest('div').find('.autocomplete-header-title').attr('data-more-url');
+                moreUrl = this.$el.closest('div').find('.autocomplete-header-title').attr('data-more-url');
                 if(typeof renderArgs[0].hits[0].post_type !== 'undefined' && renderArgs[0].hits[0].post_type == 'product') {
                     this.$el.addClass('fadedBottom');
-                    this.$el.append('<a class="button-more-products" href="' + url + '">Se flere produkter &#187;</a>');
+                    if (typeof moreUrl !== 'undefined') {
+                      this.$el.append('<a class="button-more-products" href="' + moreUrl + '">Se flere produkter &#187;</a>');
+                    }
                 } else {
-                    this.$el.append('<a class="button-more-products" href="' + url + '">Se flere &#187;</a>');
+                    if (typeof moreUrl !== 'undefined') {
+                      this.$el.append('<a class="button-more-products" href="' + moreUrl + '">Se flere &#187;</a>');
+                    }
                 }
             } else {
                 this.$el.removeClass('fadedBottom');

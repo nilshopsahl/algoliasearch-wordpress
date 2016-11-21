@@ -28,8 +28,8 @@
 </script>
 
 <script type="text/html" id="tmpl-autocomplete-post-suggestion">
-    <a class="suggestion-link {{{ data.post_type }}}" href="{{ data.permalink }}" title="{{ data.post_title }}">
-        <# if ( data.images.thumbnail ) { #>
+    <a class="suggestion-link {{ data.post_type }}" href="{{ data.permalink }}" title="{{ data.post_title }}">
+        <# if ( typeof data.images !== 'undefined' && typeof data.images.thumbnail !== 'undefined' && typeof data.images.thumbnail.url !== 'undefined' ) { #>
         <img class="suggestion-post-thumbnail" src="{{ data.images.thumbnail.url }}" alt="{{ data.post_title }}">
         <# } #>
         <div class="suggestion-post-attributes">
@@ -74,7 +74,7 @@
 
 
 <script type="text/html" id="tmpl-autocomplete-term-suggestion">
-    <div class="wrapper-suggestion-link {{{ data.taxonomy }}} term">
+    <div class="wrapper-suggestion-link {{{ data.taxonomy }}}">
         <a class="suggestion-link" href="{{ data.permalink }}"  title="{{ data.name }}">
             <p class="suggestion-post-title suggestion-tag-title">{{{ data._highlightResult.name.value }}}</p>
         </a>
@@ -133,7 +133,12 @@
         var toggleDefaultAlgoliaView = function() {
             defaultAlgoliaView = (defaultAlgoliaView=='grid') ? 'list' : 'grid';
         }
-
+        var getDefaultAlgoliaSuggestionView = function(indexId) {
+            return ((indexId=='posts_product') ? defaultAlgoliaView : ((typeof drivAlgoliaSettings[indexId] !== 'undefined') ? drivAlgoliaSettings[indexId].view : 'list'));
+        }
+        var getDefaultAlgoliaSuggestionTemplateName = function(args) {
+            return ((typeof args.hits[0].post_type !== 'undefined') ? 'autocomplete-post-suggestion' : 'autocomplete-term-suggestion');
+        }
 
         /* setup default sources */
         var sources = [];
@@ -153,28 +158,31 @@
                 }),
                 templates: {
                     header: function(query, args) {
-                        indexName = config['index_id'];
+                        if (args.nbHits==0 && (typeof drivAlgoliaSettings[config['index_id']] === 'undefined' || drivAlgoliaSettings[config['index_id']].empty_view!=='product')) return;
                         type = config['index_id'].replace('posts_', '').replace('terms_', '');
-                        if (args.nbHits==0 && drivAlgoliaSettings[indexName].empty_view!=='product') return;
-                        moreUrl = (parseInt(args.nbHits) > parseInt(args.hitsPerPage)) ? '/?s=' + query.query + '&type=' + type : false;
-                        view = (indexName=='posts_product') ? defaultAlgoliaView : drivAlgoliaSettings[indexName].view;
+                        moreUrl = (parseInt(args.nbHits) > parseInt(args.hitsPerPage)) ? '/?s=' + query.query + '&type=' + type : '';
+                        view = getDefaultAlgoliaSuggestionView(config['index_id']);
                         return wp.template('autocomplete-header')({
                             label: config['label'],
                             count: args.nbHits,
                             moreUrl: moreUrl,
                             view: view,
-                            wrapperClass: '.aa-dataset-' a+ i,
+                            wrapperClass: '.aa-dataset-' + i,
                         });
                     },
                     suggestion: wp.template(config['tmpl_suggestion']),
                     // suggestion: function(query, args) {
-                    //     return wp.template(config['tmpl_suggestion'])({
+                    //     templateName = getDefaultAlgoliaSuggestionTemplateName(args);
+                    //     return wp.template(templateName)({
                     //         class: config['index_id'],
+                    //         wrapperClass: '.aa-dataset-' + i,
+                    //         //config: config,
+                    //         //args: args,
                     //     });
                     // },
                     more: wp.template(config['tmpl_more']),
                     empty: function(query, args) {
-                        if (drivAlgoliaSettings[config['index_id']].empty_view!=='product') return;
+                        if (typeof drivAlgoliaSettings[config['index_id']] !== 'undefined' || drivAlgoliaSettings[config['index_id']].empty_view!=='product') return;
                         return wp.template('autocomplete-empty-product')({
                             query: args.query,
                         });
