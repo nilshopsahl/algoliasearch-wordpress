@@ -3357,8 +3357,8 @@ return /******/ (function(modules) { // webpackBootstrap
             typeElement = this.$el.find(".suggestion-post-attributes").attr("class");
             if (typeof renderArgs[0].hits[0].taxonomy !== 'undefined') {
               this.$el.closest('div').addClass(renderArgs[0].hits[0].taxonomy);
-            } else if (typeof renderArgs[0].hits[0].product_type !== 'undefined') {
-              this.$el.closest('div').addClass(renderArgs[0].hits[0].product_type);
+            } else if (typeof renderArgs[0].hits[0].post_type !== 'undefined') {
+              this.$el.closest('div').addClass(renderArgs[0].hits[0].post_type);
             }
             if (renderArgs[0].nbHits > renderArgs[0].hitsPerPage) {
                 moreUrl = this.$el.closest('div').find('.autocomplete-header-title').attr('data-more-url');
