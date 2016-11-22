@@ -453,21 +453,21 @@ $border-color: #eaeaea;
     // transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
     // transform: translateY(181px) translateX(0) !important; commenting this out for now
 
-    transform: translateY(109px) translateX(0) !important;
-    //tablet query
-    @media only screen and (min-width: 768px) {
-      transform: translateY(117px) translateX(0) !important;
-    }
-    // this query is here becouse of elements jumping up and down in the soma header,
-    // it needs to be customized if it this plugin is going to be used in another theme
-    @media only screen and (min-width: 1026px) {
-      transform: translateY(173px) translateX(0) !important;
-    }
-    // this query is here becouse of elements jumping up and down in the soma header,
-    // it needs to be customized if it this plugin is going to be used in another theme
-    @media only screen and (min-width: 1046px) {
-      transform: translateY(152px) translateX(0) !important;
-    }
+    // transform: translateY(109px) translateX(0) !important;
+    // //tablet query
+    // @media only screen and (min-width: 768px) {
+    //   transform: translateY(117px) translateX(0) !important;
+    // }
+    // // this query is here becouse of elements jumping up and down in the soma header,
+    // // it needs to be customized if it this plugin is going to be used in another theme
+    // @media only screen and (min-width: 1026px) {
+    //   transform: translateY(173px) translateX(0) !important;
+    // }
+    // // this query is here becouse of elements jumping up and down in the soma header,
+    // // it needs to be customized if it this plugin is going to be used in another theme
+    // @media only screen and (min-width: 1046px) {
+    //   transform: translateY(152px) translateX(0) !important;
+    // }
   }
 
   .aa-dropdown-menu-inner{
@@ -592,7 +592,8 @@ $border-color: #eaeaea;
   border-radius: 3px;
   width: 70px;
   height: 70px;
-  border:1px solid gainsboro;
+  border: 1px solid gainsboro;
+  object-fit: contain;
   @media only screen and (min-width: 1030px) {
     width: 100px;
     height: 100px;
@@ -745,23 +746,7 @@ body .thinner {
       bottom: 0em;
       width:100%;
       height: 8em;
-      background: -webkit-linear-gradient(
-          rgba(255, 255, 255, .25) 25%,
-          rgba(255, 255, 255, 1) 100%
-      );
-      background-image: -moz-linear-gradient(
-          rgba(255, 255, 255, .25) 25%,
-          rgba(255, 255, 255, 1) 100%
-      );
-      background-image: -o-linear-gradient(
-          rgba(255, 255, 255, .25) 25%,
-          rgba(255, 255, 255, 1) 100%
-      );
       background-image: linear-gradient(
-          rgba(255, 255, 255, .25) 25%,
-          rgba(255, 255, 255, 1) 100%
-      );
-      background-image: -ms-linear-gradient(
           rgba(255, 255, 255, .25) 25%,
           rgba(255, 255, 255, 1) 100%
       );

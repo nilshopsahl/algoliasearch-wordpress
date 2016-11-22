@@ -135,7 +135,8 @@ so these variables help show which class is what thing */
       width: 100%;
       float: none;
       text-align: center;
-      object-fit: contain; }
+      -o-object-fit: contain;
+         object-fit: contain; }
     @media (max-width: 1029px) {
       .algoliasearch-grid [class*="dataset"].product .aa-suggestions .aa-suggestion {
         height: 17rem; }
@@ -143,7 +144,8 @@ so these variables help show which class is what thing */
           margin-left: 1rem; }
         .algoliasearch-grid [class*="dataset"].product .aa-suggestions .aa-suggestion .suggestion-post-thumbnail {
           height: 10rem;
-          object-fit: contain; }
+          -o-object-fit: contain;
+             object-fit: contain; }
         .algoliasearch-grid [class*="dataset"].product .aa-suggestions .aa-suggestion:only-child {
           border-bottom: 0;
           border-top: 0; }
@@ -291,17 +293,7 @@ so these variables help show which class is what thing */
   left: 0 !important;
   background-color: #fff;
   overflow-x: hidden;
-  /* Disable horizontal scroll */
-  transform: translateY(109px) translateX(0) !important; }
-  @media only screen and (min-width: 768px) {
-    .aa-dropdown-menu {
-      transform: translateY(117px) translateX(0) !important; } }
-  @media only screen and (min-width: 1026px) {
-    .aa-dropdown-menu {
-      transform: translateY(173px) translateX(0) !important; } }
-  @media only screen and (min-width: 1046px) {
-    .aa-dropdown-menu {
-      transform: translateY(152px) translateX(0) !important; } }
+  /* Disable horizontal scroll */ }
 
 .aa-dropdown-menu-inner {
   width: 100%;
@@ -402,7 +394,9 @@ so these variables help show which class is what thing */
   border-radius: 3px;
   width: 70px;
   height: 70px;
-  border: 1px solid gainsboro; }
+  border: 1px solid gainsboro;
+  -o-object-fit: contain;
+     object-fit: contain; }
   @media only screen and (min-width: 1030px) {
     .aa-dropdown-menu .suggestion-post-thumbnail {
       width: 100px;
@@ -522,11 +516,8 @@ body .thinner {
   bottom: 0em;
   width: 100%;
   height: 8em;
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.25) 25%, white 100%);
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.25) 25%, white 100%);
-  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.25) 25%, white 100%);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.25) 25%, white 100%);
-  background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.25) 25%, white 100%); }
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.25) 25%, white 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.25) 25%, white 100%); }
 .fadedBottom .button-more-products {
   position: absolute;
   z-index: 10;

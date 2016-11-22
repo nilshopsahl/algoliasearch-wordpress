@@ -218,7 +218,7 @@
 
             var config = {
                 element: $menu,
-                target: this,
+                target: $searchInput,
                 attachment: 'top',
                 targetAttachment: 'bottom left',
                 offset: '-25px 0px',
@@ -318,7 +318,7 @@
 
         // Find the more button on change of dropdown
         jQuery(".aa-dataset-0").on('rendered', function() {
-            jQuery(".algoli-more").html('<a class="button-more-products" href="#">Se flere produkter &#187;</a>');
+            jQuery(".algoli-more").html('<a class="button-more-products" href="#"><?php _e( 'See more products', 'algoliasearch' ); ?> &#187;</a>');
         });
 
         /* Make dropdown-menu an overlay */
