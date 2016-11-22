@@ -1,5 +1,3 @@
-/* This plugin uses 'dataset' as the class for everything
-so these variables help show which class is what thing */
 [class*="dataset"].product, [class*="dataset"].post, [class*="dataset"]:not(.product):not(.post) {
   *zoom: 1; }
   [class*="dataset"].product:before, [class*="dataset"].product:after, [class*="dataset"].post:before, [class*="dataset"].post:after, [class*="dataset"]:not(.product):not(.post):before, [class*="dataset"]:not(.product):not(.post):after {
